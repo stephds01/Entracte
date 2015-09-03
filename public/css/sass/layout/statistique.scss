@@ -1,0 +1,250 @@
+/***************************************************
+*           Statistique
+***************************************************/
+.ent-statistique-container{
+
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+
+  .ent-statistique-graphique{
+    width:  42%;
+    align-self: center;
+    border: 2px solid #D61F61;
+    background-color: #f4f4f4;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+
+
+
+    .chart {
+      position:relative;
+      width:500px;
+      height:250px;
+
+      display: flex;
+      flex-direction: row;
+
+      .graph{
+        align-self: flex-end;
+      }
+
+
+    }
+    .hold {
+      position:absolute;
+      width:200px;
+      height:200px;
+      clip:rect(0px,200px,200px,100px);
+      left:30px;
+      top:  30px;
+    }
+    .pie {
+      position:absolute;
+      /*	width:100px;
+          height:200px;
+          -moz-border-radius:100px 0 0 100px;
+          -webkit-border-radius:100px 0 0 100px;
+          border-radius:100px 0 0 100px;
+          -moz-transform-origin:right center;
+          -webkit-transform-origin:right center;
+          transform-origin:right center; */
+      width:200px;
+      height:200px;
+      clip:rect(0px,100px,200px,0px);
+      -moz-border-radius:100px;
+      -webkit-border-radius:100px;
+      border-radius:100px;
+    }
+    .hold.gt50 {
+      clip:rect(auto, auto, auto, auto);
+    }
+    .pie.fill {
+      -moz-transform:rotate(180deg) !important;
+      -webkit-transform:rotate(180deg) !important;
+      -o-transform:rotate(180deg) !important;
+      transform:rotate(180deg) !important;
+    }
+    .legend {
+      /*clear:left;
+      float:left;*/
+      font-size:12px;
+      padding:5px;
+      width:200px;
+      height: 120px;
+      margin-left: 300px;
+      margin-top: 125px;
+    }
+    .legend DIV {
+      margin:3px 0;
+    }
+    .legend span {
+      float:right;
+      padding-left:.5em;
+    }
+    #paypal {
+      margin-left:10px;
+      margin-top:-10px;
+    }
+    #paypal .pie {
+      background-color:#ffff2c;
+      border-color:#ffff2c;
+      -moz-transform:rotate(116.28deg);
+      -webkit-transform:rotate(116.28deg);
+      -o-transform:rotate(116.28deg);
+      transform:rotate(116.28deg);
+    }
+    #paypal-lbl {
+      border-left: #ffff2c solid 1em;
+      padding-left:.5em;
+    }
+    #cheque {
+      -moz-transform:rotate(116.28deg);
+      -webkit-transform:rotate(116.28deg);
+      -o-transform:rotate(116.28deg);
+      transform:rotate(116.28deg);
+    }
+    #cheque .pie {
+      background-color:#31f5ff;
+      border-color:#31f5ff;
+      -moz-transform:rotate(109.8deg);
+      -webkit-transform:rotate(109.8deg);
+      -o-transform:rotate(109.8deg);
+      transform:rotate(109.8deg);
+    }
+    #cheque-lbl {
+      border-left: #31f5ff solid 1em;
+      padding-left:.5em;
+    }
+    #espece {
+      -moz-transform:rotate(226.08deg);
+      -webkit-transform:rotate(226.08deg);
+      -o-transform:rotate(226.08deg);
+      transform:rotate(226.08deg);
+    }
+    #espece .pie {
+      background-color:#c743ce;
+      border-color:#c743ce;
+      -moz-transform:rotate(10.08deg);
+      -webkit-transform:rotate(10.08deg);
+      -o-transform:rotate(10.08deg);
+      transform:rotate(10.08deg);
+    }
+    #espece-lbl {
+      border-left: #c743ce solid 1em;
+      padding-left:.5em;
+    }
+    #cb {
+      -moz-transform:rotate(236.16deg);
+      -webkit-transform:rotate(236.16deg);
+      -o-transform:rotate(236.16deg);
+      transform:rotate(236.16deg);
+    }
+    #cb .pie {
+      background-color:#66c3bd;
+      border-color:#66c3bd;
+      -moz-transform:rotate(6.12deg);
+      -webkit-transform:rotate(6.12deg);
+      -o-transform:rotate(6.12deg);
+      transform:rotate(6.12deg);
+    }
+    #cb-lbl {
+      border-left: #66c3bd solid 1em;
+      padding-left:.5em;
+    }
+    #ticketResto {
+      -moz-transform:rotate(242.28deg);
+      -webkit-transform:rotate(242.28deg);
+      -o-transform:rotate(242.28deg);
+      transform:rotate(242.28deg);
+    }
+    #ticketResto .pie {
+      background-color:#FACE9A;
+      border-color:#FACE9A;
+      -moz-transform:rotate(5.76deg);
+      -webkit-transform:rotate(5.76deg);
+      -o-transform:rotate(5.76deg);
+      transform:rotate(5.76deg);
+    }
+    #ticketResto-lbl {
+      border-left: #face9a solid 1em;
+      padding-left:.5em;
+    }
+    #autre {
+      -moz-transform:rotate(248.04deg);
+      -webkit-transform:rotate(248.04deg);
+      -o-transform:rotate(248.04deg);
+      transform:rotate(248.04deg);
+    }
+    #autre .pie {
+      background-color: #37ed5f;
+      border-color:#37ed5f;
+      -moz-transform:rotate(111.96deg);
+      -webkit-transform:rotate(111.96deg);
+      -o-transform:rotate(111.96deg);
+      transform:rotate(111.96deg);
+    }
+    #autre-lbl {
+      border-left:#37ed5f solid 1em;
+      padding-left:.5em;
+    }
+
+
+  }
+}
+
+
+
+
+
+
+.ent-statistique-tab {
+  width: 50%;
+
+
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  tr {
+    border: 2px solid #069AC8;
+    height: 50px;
+  }
+
+  th {
+    color: white;
+    background-color: #D61F61;
+    font-size: 14px;
+    padding-top: 20px;
+    width:  100px;
+
+  }
+
+  td {
+    font-size: 12px;
+    background-color: white;
+    text-align: center;
+
+  }
+
+}
+
+
+.ent-statistique-recherche {
+  margin-left: 242px;
+  margin-top: 25px;
+  color: #FFF;
+
+  option{
+    width: 30px;
+  }
+}
+

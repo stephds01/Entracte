@@ -1,0 +1,35 @@
+/************************************
+*               Menu
+************************************/
+.ent-menu-container {
+  background-color: #069AC8;
+}
+
+.ent-menu-container .ent-menu {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 100%;
+  background-color: #069AC8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ent-menu-container .ent-menu a {
+  color: white;
+}
+
+.ent-menu-container .ent-menu a:hover {
+  color: #069AC8;
+}
+
+.ent-menu-container .ent-menu li {
+  list-style: none;
+  align-self: center;
+  text-align: center;
+  background-color: #D61F61;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  width: 22%;
+}

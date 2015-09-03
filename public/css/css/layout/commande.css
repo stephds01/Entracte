@@ -1,0 +1,72 @@
+/******************************************
+*           Commande
+*******************************************/
+.ent-commande-container-global {
+  width: 100%;
+  background-color: #069AC8;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.ent-commande-tab {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.ent-commande-tab table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.ent-commande-tab tr {
+  border: 2px solid #069AC8;
+  height: 50px;
+}
+
+.ent-commande-tab th {
+  color: white;
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+.ent-commande-tab td {
+  font-size: 12px;
+  background-color: white;
+  text-align: center;
+}
+
+.fa-exclamation-circle {
+  color: red;
+}
+
+.fa-check-square-o {
+  color: green;
+}
+
+.fa-clock-o {
+  color: orange;
+}
+
+.fa-star {
+  color: #D61F61;
+}
+
+.fa-motorcycle {
+  color: #069AC8;
+}
+
+.ent-commande-footer {
+  background-color: #f4f4f4;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 5%;
+  padding: 10px;
+}
+
+.ent-commande-footer div {
+  padding-left: 20px;
+  font-size: 11px;
+}

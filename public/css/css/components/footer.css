@@ -1,0 +1,40 @@
+/************************************
+*             Footer
+**************************************/
+.ent-footer-container {
+  width: 100%;
+  height: 50px;
+  background-color: #D61F61;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: Helvetica , Arial, sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: normal;
+  position: fixed;
+  bottom: 0;
+}
+
+.ent-footer-container .ent-footer-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 6px 15px;
+}
+
+.ent-footer-container .ent-footer-elements .ent-footer-copyright {
+  font-size: 12px;
+  align-self: center;
+  margin-right: 720px;
+}
+
+.ent-footer-container .ent-footer-elements .ent-footer-copyright a {
+  color: #069AC8;
+  font-size: 12px;
+}
+
+.ent-footer-container .ent-footer-elements .ent-footer-date {
+  font-size: 16px;
+  align-self: center;
+}
