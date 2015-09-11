@@ -10,6 +10,3 @@
     </div>
 </nav>
 
-<div class="ent-bandeauTitre-container">
-    <ul class="ent-bandeauTitre-titre"><li>Titre de la page --> Change selon la page</li></ul>
-</div>

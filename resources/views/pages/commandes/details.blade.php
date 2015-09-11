@@ -7,6 +7,9 @@
 
 
     <div class="ent-detail-container-global">
+        <div class="ent-bandeauTitre-container">
+            <ul class="ent-bandeauTitre-titre"><li>Détails de la commande</li></ul>
+        </div>
 
         <section class="ent-detail-infoCommande">
             <div class="ent-detail-container">
@@ -22,7 +25,7 @@
                 <div class="ent-detail-informationClient">
                     <h2>Information Client</h2>
                     <ul>
-                        <li>Nom :</li>
+                        <li>Nom : </li>
                         <li>Prénom :</li>
                         <li>Téléphone :</li>
                         <li>E-mail :</li>

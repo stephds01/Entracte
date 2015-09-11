@@ -5,6 +5,9 @@
 
     @include('pages.components.menu')
     <section class="ent-home-container-global">
+        <div class="ent-bandeauTitre-container">
+            <ul class="ent-bandeauTitre-titre"><li>Historique des commandes</li></ul>
+        </div>
         <div class="ent-home-tab">
 
             <table align="center" border="1px"  cellpadding="5px"   width="95%" >

@@ -9,7 +9,9 @@
 
 
     <div class="ent-statistique-container-global">
-
+        <div class="ent-bandeauTitre-container">
+            <ul class="ent-bandeauTitre-titre"><li>Statistiques</li></ul>
+        </div>
 
 
         <section class="ent-statistique-container">

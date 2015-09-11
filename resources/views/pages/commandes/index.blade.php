@@ -6,7 +6,9 @@
     @include('pages.components.menu')
 
     <section class="ent-commande-container-global">
-
+        <div class="ent-bandeauTitre-container">
+            <ul class="ent-bandeauTitre-titre"><li>Commande en Attente</li></ul>
+        </div>
 
 
         <div class="ent-commande-tab">
@@ -25,70 +27,22 @@
                     <th>Détails</th>
                 </tr>
 
+                @foreach($address as $item)
                 <tr>
-                    <td>Ref commande</td>
+                    <td>Référence commande</td>
                     <td>Hrs commande</td>
                     <td>Hrs validation</td>
                     <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
+                    <td>{{ $item->last_name }}</td>
+                    <td>{{ $item->city }}</td>
                     <td>Montant</td>
-                    <td>Status</td>
+                    <td>{{ $item->type }}</td>
                     <td><i class="fa fa-star fa-3x"></i></td>
                     <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
                 </tr>
+                @endforeach
 
-                <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td>Status</td>
-                    <td><i class="fa fa-star fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                </tr>
 
-                <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td>Status</td>
-                    <td><i class="fa fa-star fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                </tr>
-
-                <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td>Status</td>
-                    <td><i class="fa fa-star fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                </tr>
-
-                <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td>Status</td>
-                    <td><i class="fa fa-star fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                </tr>
 
 
             </table>

@@ -19,6 +19,12 @@ Route::get('/factures', 'FacturesController@index');
 Route::get('/details', 'DetailsController@index');
 Route::get('/statistiques', 'StatistiquesController@index');
 
+
+
+Route::get('commandes', 'OrdersController@create');
+Route::get('commandes', 'J2storeAddressController@index');
+
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
