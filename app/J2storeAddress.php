@@ -7,6 +7,7 @@ class J2storeAddress extends Model {
     protected $table = 'u16w2_j2store_address';
 
     protected $fillable = [
+        'id',
         'first_name',
         'last_name',
         'email',
@@ -17,5 +18,13 @@ class J2storeAddress extends Model {
         'phone_1',
         'type',
     ];
+
+
+    public function J2storeAddress()
+    {
+        return $this->hasMany('App\J2storeAddress');
+    }
+
+
 
 }

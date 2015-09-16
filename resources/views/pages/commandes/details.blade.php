@@ -13,6 +13,7 @@
 
         <section class="ent-detail-infoCommande">
             <div class="ent-detail-container">
+
                 <div class="ent-detail-infoCommande">
                     <h2>Information Commande</h2>
                     <ul>
@@ -21,16 +22,19 @@
                         <li>Montant :</li>
                         <li>Date :</li>
                     </ul>
+
                 </div>
                 <div class="ent-detail-informationClient">
                     <h2>Information Client</h2>
+
                     <ul>
-                        <li>Nom : </li>
-                        <li>Prénom :</li>
-                        <li>Téléphone :</li>
-                        <li>E-mail :</li>
+                        <li>Nom : {{ $address->last_name }} </li>
+                        <li>Prénom : {{ $address->first_name }}</li>
+                        <li>Téléphone :{{ $address->phone_1 }}</li>
+                        <li>E-mail : {{ $address->email }}</li>
                         <li>Mémo du client :</li>
                     </ul>
+
                 </div>
                 <div class="ent-detail-infoPaiement">
                     <h2>Information Paiement</h2>
@@ -59,6 +63,7 @@
 
 
                 </div>
+
             </div>
         </section>
 

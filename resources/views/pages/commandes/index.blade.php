@@ -27,18 +27,18 @@
                     <th>Détails</th>
                 </tr>
 
-                @foreach($address as $item)
+                @foreach($address as $user)
                 <tr>
                     <td>Référence commande</td>
                     <td>Hrs commande</td>
                     <td>Hrs validation</td>
                     <td>hrs livraison</td>
-                    <td>{{ $item->last_name }}</td>
-                    <td>{{ $item->city }}</td>
+                    <td>{{ $user->last_name }}</td>
+                    <td>{{ $user->city }}</td>
                     <td>Montant</td>
-                    <td>{{ $item->type }}</td>
+                    <td>{{ $user->type }}</td>
                     <td><i class="fa fa-star fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
+                    <td><a href="{{ URL::to( 'details') }}/{{ $user->id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
                 </tr>
                 @endforeach
 

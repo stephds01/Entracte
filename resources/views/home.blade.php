@@ -24,74 +24,22 @@
                     <th>Facture</th>
                 </tr>
 
+                @foreach($address as $item)
                 <tr>
                     <td>Ref commande</td>
                     <td>Hrs commande</td>
                     <td>Hrs validation</td>
                     <td>hrs livraison</td>
-                    <td>Clients</td>
+                    <td>{{ $item->last_name }}</td>
                     <td>Localité</td>
                     <td>Montant</td>
                     <td><i class="fa fa-star fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
+                    <td><a href="{{ URL::to( 'details') }}/{{ $item->id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
                     <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
                 </tr>
+                @endforeach
 
-                <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td><i class="fa fa-clock-o fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                    <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
 
-                </tr>
-
-                <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td><i class="fa fa-times fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                    <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
-
-                </tr>
-
-                <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td><i class="fa fa-check-square-o fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                    <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
-
-                </tr>
-
-                <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>Clients</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td><i class="fa fa-motorcycle fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                    <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
-
-                </tr>
 
 
             </table>

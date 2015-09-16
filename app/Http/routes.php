@@ -11,18 +11,29 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
 
-Route::get('home', 'WelcomeController@index');
+
+
+Route::get('/', 'HomeController@index');
+Route::get('home', 'HomeController@index');
+
 Route::get('/commandes', 'CommandesController@index');
-Route::get('/factures', 'FacturesController@index');
+
+
 Route::get('/details', 'DetailsController@index');
+Route::get('details/{id}', 'detailsController@address');
+
 Route::get('/statistiques', 'StatistiquesController@index');
 
+Route::get('/factures', 'FacturesController@index');
 
 
-Route::get('commandes', 'OrdersController@create');
-Route::get('commandes', 'J2storeAddressController@index');
+//Route::get('home', 'WelcomeController@index');
+//Route::get('commandes', 'OrdersController@create');
+//Route::get('commandes', 'J2storeAddressController@index');
+
+
+
 
 
 Route::controllers([
