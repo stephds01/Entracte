@@ -25,7 +25,6 @@ class DetailsController extends Controller
     public function address($id)
     {
         $address = J2storeAddress::find($id);
-        //$address = J2storeAddress::take(1)->get();
         return view('pages.commandes.details', compact('address'));
 
     }

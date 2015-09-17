@@ -17,28 +17,26 @@
                 <tr>
                     <th>Référence commande</th>
                     <th>Heures de commande</th>
-                    <th>Heures de validation</th>
-                    <th>Heures de la livraison</th>
                     <th>Clients</th>
+                    <th>Adresse</th>
+                    <th>Code Postal</th>
                     <th>Localité</th>
                     <th>Montant</th>
-                    <th>Statut</th>
                     <th>Logo</th>
                     <th>Détails</th>
                 </tr>
 
-                @foreach($address as $user)
+                @foreach($orderInfo as $item)
                 <tr>
-                    <td>Référence commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>{{ $user->last_name }}</td>
-                    <td>{{ $user->city }}</td>
-                    <td>Montant</td>
-                    <td>{{ $user->type }}</td>
+                    <td>{{ $item->order_id }}</td>
+                    <td>....</td>
+                    <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
+                    <td>{{ $item->billing_address_1 }}</td>
+                    <td>{{ $item->billing_zip }}</td>
+                    <td>{{ $item->billing_city }}</td>
+                    <td>....</td>
                     <td><i class="fa fa-star fa-3x"></i></td>
-                    <td><a href="{{ URL::to( 'details') }}/{{ $user->id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
+                    <td><a href="{{ URL::to( 'details') }}/{{ $item->user_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
                 </tr>
                 @endforeach
 

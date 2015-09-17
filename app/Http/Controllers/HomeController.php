@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\J2storeAddress;
+use App\J2storeOrderInfo;
 
 class HomeController extends Controller {
 
@@ -35,11 +36,12 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-
-        //return view('home');
+        $orderInfo = J2storeOrderInfo::all();
         $address = J2storeAddress::all();
-        return view('home', compact('address'));
+        return view('home', compact('address', 'orderInfo'));
 	}
+
+
 
 
 }

@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\J2storeAddress;
+use App\J2storeOrderInfo;
 
 class CommandesController extends Controller{
 
@@ -25,8 +26,9 @@ class CommandesController extends Controller{
 
     public function index()
     {
+        $orderInfo = J2storeOrderInfo::all();
         $address = J2storeAddress::all();
-        return view('pages.commandes.index', ['address'=>$address]);
+        return view('pages.commandes.index', compact('orderInfo', 'address'));
     }
 // Fausse fonction qui doit remplacer la function index pour tri 'commande en cours"
 //    public function index()

@@ -14,9 +14,9 @@
                 <tr>
                     <th>Référence commande</th>
                     <th>Heures de commande</th>
-                    <th>Heures de validation</th>
-                    <th>Heures de la livraison</th>
                     <th>Clients</th>
+                    <th>Adresse</th>
+                    <th>Code Postal</th>
                     <th>Localité</th>
                     <th>Montant</th>
                     <th>Logo</th>
@@ -24,16 +24,17 @@
                     <th>Facture</th>
                 </tr>
 
-                @foreach($address as $item)
+
+                @foreach($orderInfo as $item)
                 <tr>
-                    <td>Ref commande</td>
-                    <td>Hrs commande</td>
-                    <td>Hrs validation</td>
-                    <td>hrs livraison</td>
-                    <td>{{ $item->last_name }}</td>
-                    <td>Localité</td>
-                    <td>Montant</td>
-                    <td><i class="fa fa-star fa-3x"></i></td>
+                    <td>{{ $item->order_id }}</td>
+                    <td>......</td>
+                    <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
+                    <td>{{ $item->billing_address_1 }}</td>
+                    <td>{{ $item->billing_zip }}</td>
+                    <td>{{ $item->billing_city }}</td>
+                    <td>.....</td>
+                    <td>Logo</td>
                     <td><a href="{{ URL::to( 'details') }}/{{ $item->id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
                     <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
                 </tr>

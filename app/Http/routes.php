@@ -21,7 +21,7 @@ Route::get('/commandes', 'CommandesController@index');
 
 
 Route::get('/details', 'DetailsController@index');
-Route::get('details/{id}', 'detailsController@address');
+Route::get('details/{id_user}', 'detailsController@address');
 
 Route::get('/statistiques', 'StatistiquesController@index');
 
