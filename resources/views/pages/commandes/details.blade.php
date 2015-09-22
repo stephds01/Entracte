@@ -28,11 +28,12 @@
                     <h2>Information Client</h2>
 
                     <ul>
-                        <li>Nom : {{ $address->last_name }} </li>
-                        <li>Prénom : {{ $address->first_name }}</li>
-                        <li>Téléphone :{{ $address->phone_1 }}</li>
-                        <li>E-mail : {{ $address->email }}</li>
-                        <li>Mémo du client :</li>
+
+                        {{--<li>Nom : {{ $address->last_name }} </li>--}}
+                        {{--<li>Prénom : {{ $address->first_name }}</li>--}}
+                        {{--<li>Téléphone :{{ $address->phone_1 }}</li>--}}
+                        {{--<li>E-mail : {{ $address->email }}</li>--}}
+                        {{--<li>Mémo du client :</li>--}}
                     </ul>
 
                 </div>

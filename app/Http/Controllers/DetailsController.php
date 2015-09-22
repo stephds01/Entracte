@@ -11,6 +11,7 @@ namespace app\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\J2storeAddress;
+use App\J2storeOrderInfo;
 
 
 class DetailsController extends Controller
@@ -22,10 +23,11 @@ class DetailsController extends Controller
         return view('pages.commandes.details');
     }
 
-    public function address($id)
-    {
-        $address = J2storeAddress::find($id);
-        return view('pages.commandes.details', compact('address'));
 
-    }
+//    public function address($id_user)
+//    {
+//        $address = J2storeAddress::find($id_user);
+//        //$address = J2storeAddress::take(1)->get();
+//        return view('pages.commandes.details', compact('address'));
+//    }
 }
