@@ -13,19 +13,27 @@
 
 
 
-
+//Historique de commandes
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 
+//Commandes en attente
 Route::get('/commandes', 'CommandesController@index');
 
-
+//Détails de commandes
 Route::get('/details', 'DetailsController@index');
+Route::get('/details/{orderinfo_id}', 'detailsController@address');
+
+//Statistiques
 Route::get('/statistiques', 'StatistiquesController@index');
 
+//Facture
 Route::get('/factures', 'FacturesController@index');
 
 
+
+
+//Ancienne route
 //Route::get('home', 'WelcomeController@index');
 //Route::get('commandes', 'OrdersController@create');
 //Route::get('commandes', 'J2storeAddressController@index');
@@ -33,7 +41,7 @@ Route::get('/factures', 'FacturesController@index');
 
 
 
-
+//Authentification
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

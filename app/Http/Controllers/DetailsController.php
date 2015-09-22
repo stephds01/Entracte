@@ -23,11 +23,10 @@ class DetailsController extends Controller
         return view('pages.commandes.details');
     }
 
+    public function address($orderinfo_id)
+    {
+        $orderInfo = J2storeOrderInfo::find($orderinfo_id);
+        return view('pages.commandes.details', compact('orderInfo'));
 
-//    public function address($id_user)
-//    {
-//        $address = J2storeAddress::find($id_user);
-//        //$address = J2storeAddress::take(1)->get();
-//        return view('pages.commandes.details', compact('address'));
-//    }
+    }
 }
