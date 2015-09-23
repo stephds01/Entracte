@@ -35,7 +35,7 @@
                     <td>{{ $item->billing_city }}</td>
                     <td>.....</td>
                     <td>Logo</td>
-                    <td><a href="{{ URL::to( 'details') }}/{{ $item->id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
+                    <td><a href="{{ URL::to( '/details') }}/{{ $item->orderinfo_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
                     <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
                 </tr>
                 @endforeach
