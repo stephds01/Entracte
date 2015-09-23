@@ -11,22 +11,25 @@ namespace app\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\J2storeAddress;
+use App\J2storeOrder;
 use App\J2storeOrderInfo;
-
 
 class DetailsController extends Controller
 {
 
 
-    public function index()
-    {
-        return view('pages.commandes.details');
-    }
+//    public function index()
+//    {
+//        return view('pages.commandes.details');
+//    }
 
     public function address($orderinfo_id)
     {
+        $orderStatus = J2storeOrder::all();
         $orderInfo = J2storeOrderInfo::find($orderinfo_id);
-        return view('pages.commandes.details', compact('orderInfo'));
+        return view('pages.commandes.details', compact('orderInfo', 'orderStatus'));
 
     }
+
+
 }

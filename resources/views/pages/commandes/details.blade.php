@@ -17,10 +17,10 @@
                 <div class="ent-detail-infoCommande">
                     <h2>Information Commande</h2>
                     <ul>
-                        <li>ID commande :</li>
-                        <li>Facture N° :</li>
-                        <li>Montant :</li>
-                        <li>Date :</li>
+                        <li>ID commande : {{ $orderInfo->order_id }}</li>
+                        <li>Facture N° : {{ $orderInfo->order_id }}</li>
+                        {{--<li>Montant : {{ $orderStatus->order_total }}</li>--}}
+                        {{--<li>Date : {{ $orderStatus->created_date }}</li>--}}
                     </ul>
 
                 </div>
@@ -28,11 +28,11 @@
                     <h2>Information Client</h2>
 
                     <ul>
-                        <li>Nom : {{ $orderInfo->last_name }} </li>
+                        <li>Nom : {{ $orderInfo->billing_last_name }} </li>
                         <li>Prénom : {{ $orderInfo->billing_last_name }}</li>
                         <li>Téléphone :{{ $orderInfo->billing_phone_1 }}</li>
-                        <li>E-mail : </li>
-                        <li>Mémo du client :</li>
+                        <li>E-mail :{{ $orderInfo->user_email }} </li>
+                        {{--<li>Mémo du client : {{ $orderStatus->customer_note }}</li>--}}
                     </ul>
 
                 </div>

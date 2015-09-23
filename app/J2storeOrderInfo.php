@@ -1,10 +1,14 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\J2storeOrder;
+use App\J2storeOrderInfo;
 
 class J2storeOrderInfo extends Model {
 
 	protected $table = 'u16w2_j2store_orderinfo';
+
+    protected $primaryKey = 'orderinfo_id';
 
     protected $fillable = [
         'orderinfo_id',
@@ -27,11 +31,24 @@ class J2storeOrderInfo extends Model {
         'shipping_zip',
         'user_email',
         'user_id'
-    ];
+        ];
 
-    public function J2storeOrderInfo()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function contact()
     {
-        return $this->hasMany('App\J2storeOrderInfo');
+        $order_state = J2storeOrder::first()->contact->order_state;
+        return $this->hasOne('Contact');
     }
+
+
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+//     */
+//    public function orderStatus()
+//    {
+//        return $this->hasOne('App\J2storeOrder');
+//    }
 
 }

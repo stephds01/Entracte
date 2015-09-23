@@ -13,11 +13,11 @@
 
 
 
-//Historique de commandes
+//Historique de commandes  (page Home)
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 
-//Commandes en attente
+//Commandes en attente (page commandes / index.blade)
 Route::get('/commandes', 'CommandesController@index');
 
 //Détails de commandes
