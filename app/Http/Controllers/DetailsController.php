@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\J2storeAddress;
 use App\J2storeOrder;
 use App\J2storeOrderInfo;
+use App\J2storeOrderItem;
 
 class DetailsController extends Controller
 {
@@ -23,13 +24,22 @@ class DetailsController extends Controller
 //        return view('pages.commandes.details');
 //    }
 
-    public function address($orderinfo_id)
+    public function address($order_id)
     {
-        $orderStatus = J2storeOrder::all();
-        $orderInfo = J2storeOrderInfo::find($orderinfo_id);
-        return view('pages.commandes.details', compact('orderInfo', 'orderStatus'));
+        $orderItem = J2storeOrderItem::findOrFail($order_id);
+        $order = J2storeOrder::findOrFail($order_id);
+        $orderInfo = J2storeOrderInfo::findOrFail($order_id);
+        return view('pages.commandes.details', compact('orderInfo', 'order', 'orderItem','id'));
 
     }
+
+//    public function orderDetail($orderitem_id){
+//        $orderItem = J2storeOrderItem::find($orderitem_id);
+//        return view('pages.commandes.details', compact('orderItem'));
+//
+//    }
+
+
 
 
 }

@@ -19,8 +19,8 @@
                     <ul>
                         <li>ID commande : {{ $orderInfo->order_id }}</li>
                         <li>Facture N° : {{ $orderInfo->order_id }}</li>
-                        {{--<li>Montant : {{ $orderStatus->order_total }}</li>--}}
-                        {{--<li>Date : {{ $orderStatus->created_date }}</li>--}}
+                        <li>Montant : {{ $order->order_total }}</li>
+                        <li>Date : {{ $order->created_date }}</li>
                     </ul>
 
                 </div>
@@ -32,7 +32,7 @@
                         <li>Prénom : {{ $orderInfo->billing_last_name }}</li>
                         <li>Téléphone :{{ $orderInfo->billing_phone_1 }}</li>
                         <li>E-mail :{{ $orderInfo->user_email }} </li>
-                        {{--<li>Mémo du client : {{ $orderStatus->customer_note }}</li>--}}
+                        <li>Mémo du client : {{ $order->customer_note }}</li>
                     </ul>
 
                 </div>
@@ -72,26 +72,41 @@
 
             <table align="center" border="1px" cellpadding="5px" width="60%">
                 <tr>
+                    <th>Sku</th>
                     <th>Article</th>
+                    <th>Options</th>
+                    <th>Prix Unitaire</th>
                     <th>Quantité</th>
-                    <th>Prix</th>
+                    <th>Réduction</th>
+                    <th>Prix Total</th>
                 </tr>
+
+                {{--//TODO-steph LA BOUCLE FOREACH NE MARCHE PAS ! --}}
+                @foreach($orderItem as $orderItems)
                 <tr>
-                    <td>.....</td>
-                    <td>.....</td>
-                    <td>.....</td>
+                    <td>{{ $orderItem->orderitem_sku  }}</td>
+                    <td>{{ $orderItem->orderitem_name }}</td>
+                    <td>{{ $orderItem->orderitem_name }}</td>
+                    <td>{{ $orderItem->orderitem_price }}</td>
+                    <td>{{ $orderItem->orderitem_quantity }}</td>
+                    <td>{{ $orderItem->orderitem_discount }}</td>
+                    <td>{{ $orderItem->orderitem_final_price }}</td>
                 </tr>
+                @endforeach
                 <tr>
-                    <td>.....</td>
-                    <td>.....</td>
-                    <td>.....</td>
-                </tr>
-                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td class="right">Sous Total</td>
                     <td>.....</td>
                 </tr>
                 <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td class="right">Total</td>
                     <td>.....</td>

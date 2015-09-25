@@ -10,6 +10,8 @@ class J2storeOrderInfo extends Model {
 
     protected $primaryKey = 'orderinfo_id';
 
+
+
     protected $fillable = [
         'orderinfo_id',
         'order_id',
@@ -33,14 +35,14 @@ class J2storeOrderInfo extends Model {
         'user_id'
         ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function contact()
-    {
-        $order_state = J2storeOrder::first()->contact->order_state;
-        return $this->hasOne('Contact');
-    }
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+//     */
+//    public function contact()
+//    {
+//        $order_state = J2storeOrder::first()->contact->order_state;
+//        return $this->hasOne('Contact');
+//    }
 
 
 //    /**

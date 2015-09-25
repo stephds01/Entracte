@@ -20,9 +20,11 @@ Route::get('home', 'HomeController@index');
 //Commandes en attente (page commandes / index.blade)
 Route::get('/commandes', 'CommandesController@index');
 
+
 //Détails de commandes
-Route::get('/details', 'DetailsController@index');
-Route::get('/details/{orderinfo_id}', 'detailsController@address');
+//Route::get('/details', 'DetailsController@index');
+Route::get('/details/{order_id}', 'detailsController@address');
+//Route::get('/details/{orderitem_id}', 'detailsController@orderDetail');
 
 //Statistiques
 Route::get('/statistiques', 'StatistiquesController@index');

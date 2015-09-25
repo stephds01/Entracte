@@ -36,6 +36,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+
         $orderInfo = J2storeOrderInfo::all();
         $address = J2storeAddress::all();
         return view('home', compact('address', 'orderInfo'));
