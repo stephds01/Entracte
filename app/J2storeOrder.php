@@ -20,6 +20,12 @@ class J2storeOrder extends Model {
 
     ];
 
+    //Function qui met en relation la table OrderInfo
+    public function OrderInfoModel()
+    {
+        return $this->hasMany('App\J2storeOrderInfo');
+    }
+
     public function contact()
     {
         $orderInfo = J2storeOrder::first()->contact->order_state;

@@ -18,13 +18,7 @@ use App\J2storeOrderItem;
 class DetailsController extends Controller
 {
 
-
-//    public function index()
-//    {
-//        return view('pages.commandes.details');
-//    }
-
-    public function address($order_id)
+    public function adress($order_id)
     {
         $orderItem = J2storeOrderItem::findOrFail($order_id);
         $order = J2storeOrder::findOrFail($order_id);
@@ -33,10 +27,22 @@ class DetailsController extends Controller
 
     }
 
+
+
+
+
+
+//********************************************************************
+//*  DIFFERENTS TESTS
+//********************************************************************
+//  //    public function index()
+//    {
+//        return view('pages.commandes.details');
+//    }
+//
 //    public function orderDetail($orderitem_id){
 //        $orderItem = J2storeOrderItem::find($orderitem_id);
 //        return view('pages.commandes.details', compact('orderItem'));
-//
 //    }
 
 

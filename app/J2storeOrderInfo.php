@@ -35,6 +35,14 @@ class J2storeOrderInfo extends Model {
         'user_id'
         ];
 
+//Function qui met en relation la table Order
+    public function OrderModel()
+    {
+        return $this->hasMany('App\J2storeOrder');
+    }
+
+
+
 //    /**
 //     * @return \Illuminate\Database\Eloquent\Relations\HasOne
 //     */

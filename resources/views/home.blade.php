@@ -28,7 +28,7 @@
                 @foreach($orderInfo as $item)
                 <tr>
                     <td>{{ $item->order_id }}</td>
-                    <td>......</td>
+                    <td></td>{{--<td>{{ $item->order->created_date }}</td>  --}}{{--//TODO-steph Je n'arrive pas as bouclé la 2ème table--}}
                     <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
                     <td>{{ $item->billing_address_1 }}</td>
                     <td>{{ $item->billing_zip }}</td>

@@ -34,6 +34,24 @@ class CommandesController extends Controller{
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//********************************************************************
+//*  DIFFERENTS TESTS
+//********************************************************************
 // Fausse fonction qui doit remplacer la function index pour tri 'commande en cours"
 //    public function index()
 //    {
