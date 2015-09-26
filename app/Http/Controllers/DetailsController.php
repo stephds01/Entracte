@@ -18,7 +18,7 @@ use App\J2storeOrderItem;
 class DetailsController extends Controller
 {
 
-    public function adress($order_id)
+    public function index($order_id)
     {
         $orderItem = J2storeOrderItem::findOrFail($order_id);
         $order = J2storeOrder::findOrFail($order_id);

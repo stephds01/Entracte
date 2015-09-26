@@ -8,23 +8,13 @@ use Illuminate\Http\Request;
 
 class J2storeAddressController extends Controller {
 
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
 
 
-
-
-
-
-
-    
-
-
-
-
-
-
-//********************************************************************
-//*  DIFFERENTS TESTS
-//********************************************************************
 //	public function index()
 //	{
 //		$address = J2storeAddress::all();
