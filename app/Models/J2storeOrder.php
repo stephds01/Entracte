@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\Models;
 use Illuminate\Database\Eloquent;
 use App\J2storeOrder;
 use App\J2storeOrderInfo;
