@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
 
-use App\J2storeAddress;
-use App\J2storeOrder;
-use App\J2storeOrderInfo;
+
+use App\Models\J2storeAddress;
+use App\Models\J2storeOrder;
+use App\Models\J2storeOrderInfo;
 
 class HomeController extends Controller {
 
