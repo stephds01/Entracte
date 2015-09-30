@@ -1,9 +1,10 @@
 <?php namespace App\Http\Controllers;
 
 
-use App\Models\J2storeAddress;
+use App\Http\Requests;
 use App\Models\J2storeOrder;
 use App\Models\J2storeOrderInfo;
+use App\Models\J2storeOrderItem;
 
 class HomeController extends Controller {
 
@@ -40,9 +41,14 @@ class HomeController extends Controller {
 	{
         $order = J2storeOrder::all();
         $orderInfo = J2storeOrderInfo::all();
-        $address = J2storeAddress::all();
-        return view('home', compact('address', 'orderInfo', 'order'));
+		$orderItem = J2storeOrderItem::all();
+//        $address = J2storeAddress::all();
+//		dd($order);
+//		dd($orderInfo);
+        return view('home', compact('orderInfo', 'order', 'orderItem'));
+
 	}
+
 
 
 

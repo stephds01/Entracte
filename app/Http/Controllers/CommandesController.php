@@ -1,36 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * Name: Stéphanie
- * Date: 02/09/2015
- * Time: 16:17
- */
 
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\J2storeAddress;
-use App\J2storeOrder;
-use App\J2storeOrderInfo;
+use App\Models\J2storeOrder;
+use App\Models\J2storeOrderInfo;
+
 
 class CommandesController extends Controller{
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-//    public function index(){
-//        return view('pages.commandes.index');
-//    }
 
+
+ //Mis en commentaire le 28092015 a 14h50
     public function index()
     {
-        $orderStatus = J2storeOrder::all();
+        $order = J2storeOrder::all();
         $orderInfo = J2storeOrderInfo::all();
-        $address = J2storeAddress::all();
-        return view('pages.commandes.index', compact('orderInfo', 'address','orderStatus'));
+//      $orderStatus = J2storeOrder::all();
+//        		dd($order);
+//        		dd($orderInfo);
+        return view('pages.commandes.index', compact('orderInfo', 'order'));
     }
 
 
@@ -80,16 +69,16 @@ class CommandesController extends Controller{
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
+//    /**
+//     * Display the specified resource.
+//     *
+//     * @param  int  $id
+//     * @return Response
+//     */
+//    public function show($id)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.

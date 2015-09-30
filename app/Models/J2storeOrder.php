@@ -1,50 +1,45 @@
 <?php namespace App\Models;
 use Illuminate\Database\Eloquent;
-use App\J2storeOrder;
-use App\J2storeOrderInfo;
 use Illuminate\Database\Eloquent\Model;
 
 class J2storeOrder extends Model {
 
-//Model a été remplacé par Eloquent
     protected $table = 'u16w2_j2store_orders';
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'order_id';
 
     protected $fillable = [
+        'order_id',
         'order_state',
         'order_state_id',
         'created_date',
         'order_total',
-        'customer_note'
-
+        'customer_note',
     ];
 
-    //Function qui met en relation la table OrderInfo
-    public function OrderInfoModel()
-    {
-        return $this->hasMany('App\J2storeOrderInfo');
+//    /****************************************************************
+//     * Le model sert a faire les relations entre les tables
+//     *****************************************************************/
+
+
+//Function qui met en relation la méthode 'OrderInfo' avec la table OrderInfo
+    public function OrderInfo(){
+        return $this->hasOne('App\Models\J2storeOrderInfo');
     }
 
-    public function contact()
-    {
-        $orderInfo = J2storeOrder::first()->contact->order_state;
-        return $this->hasOne('orderInfo');
+
+//Function qui met en relation la méthode 'OrderItem' avec la table OrderItem
+    public function orderItem(){
+        return $this->hasOne('App\Models\J2storeOrderItem');
     }
 
 
-//    public function orderInfo(){
-//        return $this->hasMany('orderInfo');
-//    }
-
-    public function order()
-    {
-        return $this->hasMany('App\J2storeOrder');
-    }
-//
-//    public function orderInfo()
+// A mettre dans le controler
+//    public function contact()
 //    {
-//        return $this->hasManyThrough('App\J2storeOrder');
+//        $orderInfo = J2storeOrder::first()->contact->order_state;
+//        return $this->hasOne('orderInfo');
 //    }
+//
 
 }

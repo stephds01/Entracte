@@ -1,21 +1,19 @@
 <?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\J2storeOrder;
-use App\J2storeOrderInfo;
 
-class J2storeOrderInfo extends Model {
+class J2storeOrderInfo extends Model
+{
 
-	protected $table = 'u16w2_j2store_orderinfo';
+    protected $table = 'u16w2_j2store_orderinfo';
 
-    protected $primaryKey = 'orderinfo_id';
+    protected $primaryKey = 'order_id';
 
+    public $timestamps = false;
 
 
     protected $fillable = [
-        'orderinfo_id',
         'order_id',
-        'orderpayment_id',
         'billing_last_name',
         'billing_first_name',
         'billing_middle_name',
@@ -32,14 +30,24 @@ class J2storeOrderInfo extends Model {
         'shipping_city',
         'shipping_zip',
         'user_email',
-        'user_id'
-        ];
+        'user_id',
 
-//Function qui met en relation la table Order
-    public function OrderModel()
+
+    ];
+
+//    /****************************************************************
+//     * Le model sert a faire les relations entre les tables
+//     *****************************************************************/
+
+//Function qui met en relation la méthode 'Order' avec la table Order
+    public function Order()
     {
-        return $this->hasMany('App\J2storeOrder');
+        return $this->belongsTo('App\Models\J2storeOrder');
     }
+
+
+
+
 
 
 
@@ -51,14 +59,4 @@ class J2storeOrderInfo extends Model {
 //        $order_state = J2storeOrder::first()->contact->order_state;
 //        return $this->hasOne('Contact');
 //    }
-
-
-//    /**
-//     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-//     */
-//    public function orderStatus()
-//    {
-//        return $this->hasOne('App\J2storeOrder');
-//    }
-
 }

@@ -25,18 +25,37 @@
                 </tr>
 
 
+                {{--@foreach($orderInfo as $item)--}}
+                {{--<tr>--}}
+                    {{--<td>{{ $item->order_id }}</td>--}}
+                    {{--//TODO-steph Je n'arrive pas as bouclé la 2ème table--}}
+                    {{--<td>{{ $item->order->created_date }}</td>--}}
+                    {{--<td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>--}}
+                    {{--<td>{{ $item->billing_address_1 }}</td>--}}
+                    {{--<td>{{ $item->billing_zip }}</td>--}}
+                    {{--<td>{{ $item->billing_city }}</td>--}}
+                    {{--<td>{{ $item->orderItem->orderitem_name }}</td>--}}
+                    {{--<td>{{ $item->order->order_total}}</td>--}}
+                    {{--<td>Logo</td>--}}
+                    {{--<td><a href="{{ URL::to( '/details') }}/{{ $item->orderinfo_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>--}}
+
+                {{--</tr>--}}
+                {{--@endforeach--}}
+
                 @foreach($orderInfo as $item)
                 <tr>
-                    <td>{{ $item->order_id }}</td>
-                    <td></td>{{--<td>{{ $item->order->created_date }}</td>  --}}{{--//TODO-steph Je n'arrive pas as bouclé la 2ème table--}}
-                    <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
-                    <td>{{ $item->billing_address_1 }}</td>
-                    <td>{{ $item->billing_zip }}</td>
-                    <td>{{ $item->billing_city }}</td>
-                    <td>.....</td>
-                    <td>Logo</td>
-                    <td><a href="{{ URL::to( '/details') }}/{{ $item->orderinfo_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                    <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
+                <td>{{ $item->order_id }}</td>
+                <td>{{ $item->order->created_date }}</td>
+                <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
+                <td>{{ $item->billing_address_1 }}</td>
+                <td>{{ $item->billing_zip }}</td>
+                <td>{{ $item->billing_city }}</td>
+                    {{--Essaye de mettre en relation la table orderItem--}}
+                {{--<td>{{ $item->orderItem->orderitem_name }}</td>--}}
+                <td>{{ $item->order->order_total}}</td>
+                <td>Logo</td>
+                <td><a href="{{ URL::to( '/details') }}/{{ $item->orderinfo_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
+                <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
                 </tr>
                 @endforeach
 

@@ -27,15 +27,16 @@
                 </tr>
 
                 @foreach($orderInfo as $item)
+
                 <tr>
                     <td>{{ $item->order_id }}</td>
-                    <td>{{ $item->created_date }}</td>
+                    <td>{{ $item->order->created_date }}</td>
                     <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
                     <td>{{ $item->billing_address_1 }}</td>
                     <td>{{ $item->billing_zip }}</td>
                     <td>{{ $item->billing_city }}</td>
-                    {{--<td>{{ $tableorders->order_total }}</td>--}}
-                    {{--<td><i class=" {{ status($item->orderStatus->order_state) }}"></i></td>--}}
+                    <td>{{ $item->order->order_total}}</td>
+                    <td></td>{{--<td><i class=" {{ status($item->orderStatus->order_state) }}"></i></td>--}}
                     <td><a href="{{ URL::to( '/details') }}/{{ $item->orderinfo_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
                 </tr>
                 @endforeach
