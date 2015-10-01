@@ -33,6 +33,8 @@ class J2storeOrderItem extends Model {
         return $this->belongsTo('App\J2storeOrder');
 
     }
+
+
 //    //Function qui met en relation avec la table OrderInfo
 //    public function orderInfo()
 //    {

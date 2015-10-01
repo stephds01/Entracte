@@ -48,9 +48,6 @@ class J2storeOrderInfo extends Model
 
 
 
-
-
-
 //    /**
 //     * @return \Illuminate\Database\Eloquent\Relations\HasOne
 //     */
