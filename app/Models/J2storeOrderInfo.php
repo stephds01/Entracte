@@ -9,7 +9,7 @@ class J2storeOrderInfo extends Model
 
     protected $primaryKey = 'order_id';
 
-    public $timestamps = false;
+//    public $timestamps = false;
 
 
     protected $fillable = [
@@ -35,6 +35,8 @@ class J2storeOrderInfo extends Model
 
     ];
 
+
+
 //    /****************************************************************
 //     * Le model sert a faire les relations entre les tables
 //     *****************************************************************/
@@ -44,6 +46,8 @@ class J2storeOrderInfo extends Model
     {
         return $this->belongsTo('App\Models\J2storeOrder');
     }
+
+
 
 
 

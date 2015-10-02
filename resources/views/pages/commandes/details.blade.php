@@ -16,36 +16,37 @@
 
                 <div class="ent-detail-infoCommande">
                     <h2>Information Commande</h2>
+
                     <ul>
-                        <li>ID commande : </li>
-                        {{--<li>Facture N° : {{ $orderInfo->order_id }}</li>--}}
+                        {{--<li>ID commande : {{ $order->id }}</li>--}}
+                        {{--<li>Facture N° : {{ $item->order_id }}</li>--}}
                         {{--<li>Montant : {{ $order->order_total }}</li>--}}
-                        {{--<li>Date : {{ $order->created_date }}</li>--}}
+                        {{--<li>Date : {{ $item->created_date }}</li>--}}
                     </ul>
+
 
                 </div>
                 <div class="ent-detail-informationClient">
                     <h2>Information Client</h2>
 
                     <ul>
-                        {{--<li>Nom : {{ $orderInfo->billing_last_name }} </li>--}}
-                        {{--<li>Prénom : {{ $orderInfo->billing_last_name }}</li>--}}
-                        {{--<li>Téléphone :{{ $orderInfo->billing_phone_1 }}</li>--}}
+                        {{--@foreach($orderInfo as $item)--}}
+                        {{--<li>Nom : {{ $item->billing_last_name }} </li>--}}
+                        {{--<li>Prénom : {{ $item->billing_last_name }}</li>--}}
+                        {{--<li>Téléphone :{{ $item->billing_phone_1 }}</li>--}}
                         {{--<li>E-mail :{{ $orderInfo->user_email }} </li>--}}
-                        {{--<li>Mémo du client : {{ $order->customer_note }}</li>--}}
+                        {{--<li>Mémo du client : {{ $item->$order->customer_note }}</li>--}}
+                        {{--@endforeach--}}
                     </ul>
 
                 </div>
                 <div class="ent-detail-infoPaiement">
                     <h2>Information Paiement</h2>
+                    {{--<ul>--}}
+                        {{--<li>Payé en : {{ $order->orderpayment_type }}</li>--}}
+                        {{--<li>Status du paiement : {{ $order->transaction_status }} </li>--}}
+                    {{--</ul>--}}
 
-                    <form action="#" method="get"></form>
-                    <p><label for="statut">Statut du paiement</label>
-                        <select name="statusPaiement" id="statusPaiement">
-                            <option value="Confirme">Confirmé</option>
-                            <option value="Echoue">Echoué</option>
-                            <option value="En Attente">En Attente</option>
-                        </select></p>
                 </div>
                 <div class="ent-detail-infoStatut">
                     <h2>Information Statut</h2>
@@ -82,15 +83,16 @@
                 </tr>
 
                 {{--//TODO-steph LA BOUCLE FOREACH NE MARCHE PAS ! --}}
-                {{--@foreach($orderItem as $orderItems)--}}
-                {{--<tr>--}}
+                {{--@foreach($orderItem as $item)--}}
+                <tr>
+                    {{--<td>{{ $order->orderitem_sku  }}</td>--}}
                     {{--<td>{{ $orderItem->orderitem_sku  }}</td>--}}
-                    {{--<td>{{ $orderItem->orderitem_name }}</td>--}}
-                    {{--<td>{{ $orderItem->orderitem_name }}</td>--}}
-                    {{--<td>{{ $orderItem->orderitem_price }}</td>--}}
-                    {{--<td>{{ $orderItem->orderitem_quantity }}</td>--}}
-                    {{--<td>{{ $orderItem->orderitem_discount }}</td>--}}
-                    {{--<td>{{ $orderItem->orderitem_final_price }}</td>--}}
+                    {{--<td>{{ $item->orderitem_name }}</td>--}}
+                    {{--<td>{{ $item->orderitem_price }}</td>--}}
+                    {{--<td>{{ $item->orderitem_quantity }}</td>--}}
+                    {{--<td>{{ $item->orderitem_discount }}</td>--}}
+                    {{--<td>{{ $item->orderitem_final_price }}</td>--}}
+
                 {{--</tr>--}}
                 {{--@endforeach--}}
                 <tr>

@@ -22,7 +22,8 @@ Route::get('/commandes', 'CommandesController@index');
 
 
 //Détails de commandes
-Route::get('/details/{id}', 'detailsController@index');
+Route::get('/details', 'detailsController@index');
+Route::get('/details/{order_id}', 'detailsController@details');
 //Route::get('/details', 'DetailsController@index');
 //Route::get('/details/{orderitem_id}', 'detailsController@orderDetail');
 

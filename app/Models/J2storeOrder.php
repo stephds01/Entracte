@@ -15,6 +15,8 @@ class J2storeOrder extends Model {
         'created_date',
         'order_total',
         'customer_note',
+        'transaction_status',
+        'orderpayment_type'
     ];
 
 //    /****************************************************************
@@ -29,7 +31,7 @@ class J2storeOrder extends Model {
 
 
 //Function qui met en relation la méthode 'OrderItem' avec la table OrderItem
-    public function orderItem(){
+    public function OrderItem(){
         return $this->hasOne('App\Models\J2storeOrderItem');
     }
 

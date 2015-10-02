@@ -23,6 +23,8 @@ class J2storeOrderItem extends Model {
 
 
 
+
+
 //    /****************************************************************
 //     * Le model sert a faire les relations entre les tables
 //     *****************************************************************/
