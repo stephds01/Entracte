@@ -7427,7 +7427,7 @@ label,
   background-color: #069AC8;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .ent-menu-container .ent-menu a {
@@ -7436,6 +7436,7 @@ label,
 
 .ent-menu-container .ent-menu a:hover {
   color: #069AC8;
+  text-decoration: none;
 }
 
 .ent-menu-container .ent-menu li {
@@ -7446,7 +7447,8 @@ label,
   border-radius: 10px;
   color: white;
   padding: 10px;
-  width: 22%;
+  width: 471px;
+  margin-right: 10px;
 }
 
 .ent-bandeauTitre-container .ent-bandeauTitre-titre {

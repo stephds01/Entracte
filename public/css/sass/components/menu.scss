@@ -14,14 +14,16 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 
     a {
       color: white;
     }
 
+
     a:hover {
       color: #069AC8;
+      text-decoration: none;
     }
 
     li {
@@ -32,7 +34,8 @@
       border-radius: 10px;
       color: white;
       padding: 10px;
-      width: 22%;
+      width: 471px;
+      margin-right: 10px;
 
     }
   }
