@@ -11,6 +11,7 @@ class J2storeOrderItem extends Model {
     public $timestamps =false;
 
     protected $fillable = [
+        'order_id',
         'orderitem_id',
         'orderitem_sku',
         'orderitem_name',

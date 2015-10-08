@@ -22,10 +22,11 @@ Route::get('/commandes', 'CommandesController@index');
 
 
 //Détails de commandes
-Route::get('/details', 'detailsController@index');
-Route::get('/details/{order_id}', 'detailsController@details');
 //Route::get('/details', 'DetailsController@index');
-//Route::get('/details/{orderitem_id}', 'detailsController@orderDetail');
+//Route::get('/details/{order_id}', 'DetailsController@details');
+Route::get('/details/{order_id}', 'DetailsController@commande');
+//Route::get('/details', 'DetailsController@index');
+//Route::get('/details/{orderitem_id}', 'DetailsController@orderDetail');
 
 //Statistiques
 Route::get('/statistiques', 'StatistiquesController@index');

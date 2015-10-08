@@ -4,6 +4,7 @@
       <w>adresse</w>
       <w>avec</w>
       <w>commande</w>
+      <w>cours</w>
       <w>entre</w>
       <w>facture</w>
       <w>faire</w>
@@ -12,6 +13,7 @@
       <w>paiement</w>
       <w>référence</w>
       <w>sert</w>
+      <w>traitement</w>
     </words>
   </dictionary>
 </component>

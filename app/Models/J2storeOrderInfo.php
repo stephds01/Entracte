@@ -31,9 +31,9 @@ class J2storeOrderInfo extends Model
         'shipping_zip',
         'user_email',
         'user_id',
-
-
     ];
+
+
 
 
 

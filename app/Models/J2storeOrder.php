@@ -26,14 +26,15 @@ class J2storeOrder extends Model {
 
 //Function qui met en relation la méthode 'OrderInfo' avec la table OrderInfo
     public function OrderInfo(){
-        return $this->hasOne('App\Models\J2storeOrderInfo');
+        return $this->hasMany('App\Models\J2storeOrderInfo');
     }
 
 
 //Function qui met en relation la méthode 'OrderItem' avec la table OrderItem
     public function OrderItem(){
-        return $this->hasOne('App\Models\J2storeOrderItem');
+        return $this->hasMany('App\Models\J2storeOrderItem');
     }
+
 
 
 // A mettre dans le controler

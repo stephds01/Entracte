@@ -18,7 +18,7 @@
 ////	public function index()
 ////	{
 ////		$address = J2storeAddress::all();
-////        return view('pages.commandes.index', ['address'=>$address]);
+////        return view('pages.commandes.index', compact('address');
 ////	}
 ////// Fausse fonction qui doit remplacer la function index pour tri 'commande en cours"
 //////    public function index()

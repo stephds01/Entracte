@@ -18,10 +18,10 @@
                     <h2>Information Commande</h2>
 
                     <ul>
-                        {{--<li>ID commande : {{ $order->id }}</li>--}}
-                        {{--<li>Facture N° : {{ $item->order_id }}</li>--}}
-                        {{--<li>Montant : {{ $order->order_total }}</li>--}}
-                        {{--<li>Date : {{ $item->created_date }}</li>--}}
+                        <li>ID commande : {{ $order->order_id }}</li>
+                        <li>Facture N° : {{ $order->order_id }}</li>
+                        <li>Montant : {{ $order->order_total }}</li>
+                        <li>Date : {{ $order->created_date }}</li>
                     </ul>
 
 
@@ -30,34 +30,28 @@
                     <h2>Information Client</h2>
 
                     <ul>
-                        {{--@foreach($orderInfo as $item)--}}
-                        {{--<li>Nom : {{ $item->billing_last_name }} </li>--}}
-                        {{--<li>Prénom : {{ $item->billing_last_name }}</li>--}}
-                        {{--<li>Téléphone :{{ $item->billing_phone_1 }}</li>--}}
-                        {{--<li>E-mail :{{ $orderInfo->user_email }} </li>--}}
-                        {{--<li>Mémo du client : {{ $item->$order->customer_note }}</li>--}}
-                        {{--@endforeach--}}
+                        <li>Nom : {{ $orderInfo->billing_last_name }} </li>
+                        <li>Prénom : {{ $orderInfo->billing_last_name }}</li>
+                        <li>Téléphone :{{ $orderInfo->billing_phone_1 }}</li>
+                        <li>E-mail :{{ $orderInfo->user_email }} </li>
+                        <li>Mémo du client : {{ $order->customer_note }}</li>
                     </ul>
 
                 </div>
                 <div class="ent-detail-infoPaiement">
                     <h2>Information Paiement</h2>
-                    {{--<ul>--}}
-                        {{--<li>Payé en : {{ $order->orderpayment_type }}</li>--}}
-                        {{--<li>Status du paiement : {{ $order->transaction_status }} </li>--}}
-                    {{--</ul>--}}
+                    <ul>
+                        <li>Payé en : {{ $order->orderpayment_type }}</li>
+                        <li>Status du paiement : {{ $order->transaction_status }} </li>
+                    </ul>
 
                 </div>
                 <div class="ent-detail-infoStatut">
                     <h2>Information Statut</h2>
-
                     <form action="#" method="get"></form>
-                    <p><label for="statutCommande">Staut de la commande</label>
+                    <p><label for="statutCommande">Statut de la commande</label>
                         <select name="statusCommande" id="statusCommande">
-                            <option value="enCoursTraitement">En cours de traitement</option>
-                            <option value="Annulé">Annulé</option>
-                            <option value="EnCoursLivraison">En cours de livraison</option>
-                            <option value="livre">Livré</option>
+                            <option value="">En cours de traitement</option>
                         </select></p>
 
 
@@ -82,19 +76,22 @@
                     <th>Prix Total</th>
                 </tr>
 
-                {{--//TODO-steph LA BOUCLE FOREACH NE MARCHE PAS ! --}}
+                {{--//TODO-steph LA BOUCLE FOREACH NE MARCHE PAS !--}}
+                @if (\App\Models\J2storeOrderItem::find('order_id') == $order->order_id)
+                    <p>mon if fonctionne</p>
                 {{--@foreach($orderItem as $item)--}}
-                <tr>
-                    {{--<td>{{ $order->orderitem_sku  }}</td>--}}
-                    {{--<td>{{ $orderItem->orderitem_sku  }}</td>--}}
+                {{--<tr>--}}
+                    {{--<td>{{ $item->orderitem_sku }}</td>--}}
                     {{--<td>{{ $item->orderitem_name }}</td>--}}
-                    {{--<td>{{ $item->orderitem_price }}</td>--}}
+                    {{--<td>{{ $item->order_id }}</td>--}}
                     {{--<td>{{ $item->orderitem_quantity }}</td>--}}
                     {{--<td>{{ $item->orderitem_discount }}</td>--}}
                     {{--<td>{{ $item->orderitem_final_price }}</td>--}}
 
                 {{--</tr>--}}
                 {{--@endforeach--}}
+                    @else <p>Mon if ne fonctionne pas</p>
+                @endif
                 <tr>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
