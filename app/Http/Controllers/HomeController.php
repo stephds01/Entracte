@@ -25,7 +25,6 @@ class HomeController extends Controller {
 	/**
 	 * Create a new controller instance.
 	 *
-	 * @return void
 	 */
 	public function __construct()
 	{
@@ -42,10 +41,12 @@ class HomeController extends Controller {
         $order = J2storeOrder::all();
         $orderInfo = J2storeOrderInfo::all();
 		$orderItem = J2storeOrderItem::all();
-//        $address = J2storeAddress::all();
-//		dd($order);
-//		dd($orderInfo);
-        return view('home', compact('orderInfo', 'order', 'orderItem'));
+		$total = '';
+		foreach($order as $price){
+			$total+=floatval($price['order_total']);
+		}
+
+		return view('home', compact('orderInfo', 'order', 'orderWait', 'orderItem', 'total'));
 
 	}
 
