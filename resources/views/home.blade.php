@@ -33,7 +33,7 @@
                 <td>{{ $item->billing_zip }}</td>
                 <td>{{ $item->billing_city }}</td>
                 <td>{{ $item->order->order_total}}</td>
-                <td>Logo</td>
+                <td><i class=" {{ status($item->orderStatus->order_state) }}"></i></td>
                     <td><a href="{{ URL::to( '/details') }}/{{ $item->order_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
                     <td><i class="fa fa-file-pdf-o fa-2x"></i></td>
                 </tr>

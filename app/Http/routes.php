@@ -16,6 +16,7 @@
 //Historique de commandes  (page Home)
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@contact');
 
 //Commandes en attente (page commandes / index.blade)
 Route::get('/commandes', 'CommandesController@index');
