@@ -30,7 +30,7 @@ class J2storeOrderItem extends Model {
 //     * Le model sert a faire les relations entre les tables
 //     *****************************************************************/
 
-//Function qui met en relation la méthode 'Order' avec la table Order
+//Function qui met en relation la mï¿½thode 'Order' avec la table Order
     public function Order()
     {
         return $this->belongsTo('App\J2storeOrder');

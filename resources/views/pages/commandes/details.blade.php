@@ -48,15 +48,32 @@
                 </div>
                 <div class="ent-detail-infoStatut">
                     <h2>Information Statut</h2>
-                    <form action="#" method="get"></form>
-                    <p><label for="statutCommande">Statut de la commande</label>
-                        <select name="statusCommande" id="statusCommande">
-                            <option value="">En cours de traitement</option>
-                        </select></p>
-
-
-
-
+                    <p>Statut actuel :
+                        @if($order->order_state_id == 1)
+                            <i class="fa fa-clock-o fa-2x"></i>
+                        @elseif($order->order_state_id == 2)
+                            <i class="fa fa-check-square-o fa-2x"></i>
+                        @elseif($order->order_state_id == 3)
+                            <i class="fa fa-exclamation-circle fa-2x"></i>
+                        @elseif($order->order_state_id == 4)
+                            <i class="fa fa-motorcycle fa-2x"></i>
+                        @endif
+                    </p>
+                    <form action="{{route('valid_status')}}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="order_id" value="{{ $order->order_id }}">
+                    <p>
+                        <label for="order_state">Statut de la commande</label>
+                        <select name="order_state" id="order_state">
+                            <option value="">...</option>
+                            <option value="stay">En cours de traitement</option>
+                            <option value="livraison"><i class="fa fa-motorcycle fa-2x"></i> En cours de livraison</option>
+                            <option value="confirm"><i class="fa fa-check-square-o fa-2x"></i> Livré</option>
+                            <option value="stop"><i class="fa fa-exclamation-circle fa-2x"></i> Commande Annulée</option>
+                        </select>
+                        <input type="submit" value="valider" name="state">
+                    </p>
+                    </form>
                 </div>
 
             </div>
@@ -76,39 +93,21 @@
                     <th>Prix Total</th>
                 </tr>
 
-                {{--//TODO-steph LA BOUCLE FOREACH NE MARCHE PAS !--}}
-                @if (\App\Models\J2storeOrderItem::find('order_id') == $order->order_id)
-                    <p>mon if fonctionne</p>
-                {{--@foreach($orderItem as $item)--}}
-                {{--<tr>--}}
-                    {{--<td>{{ $item->orderitem_sku }}</td>--}}
-                    {{--<td>{{ $item->orderitem_name }}</td>--}}
-                    {{--<td>{{ $item->order_id }}</td>--}}
-                    {{--<td>{{ $item->orderitem_quantity }}</td>--}}
-                    {{--<td>{{ $item->orderitem_discount }}</td>--}}
-                    {{--<td>{{ $item->orderitem_final_price }}</td>--}}
+                @foreach($orderItems as $item)
+                <tr>
+                    <td>{{ $item->orderitem_sku }}</td>
+                    <td>{{ $item->orderitem_name }}</td>
+                    <td>{{ $item->orderitem_attributes }} </td>
+                    <td>{{ $item->orderitem_price }} €</td>
+                    <td>{{ $item->orderitem_quantity }}</td>
+                    <td>{{ $item->orderitem_discount }}</td>
+                    <td>{{ $item->orderitem_final_price }} €</td>
 
-                {{--</tr>--}}
-                {{--@endforeach--}}
-                    @else <p>Mon if ne fonctionne pas</p>
-                @endif
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td class="right">Sous Total</td>
-                    <td>.....</td>
                 </tr>
+                @endforeach
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td class="right">Total</td>
-                    <td>.....</td>
+                    <td colspan="6" class="right">Total</td>
+                    <td>{{ $order->order_total }} €</td>
                 </tr>
             </table>
         </section>
