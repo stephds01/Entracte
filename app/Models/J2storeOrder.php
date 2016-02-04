@@ -4,6 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class J2storeOrder extends Model {
 
+    protected $connection = 'mysql2';
     protected $table = 'u16w2_j2store_orders';
 
     protected $primaryKey = 'order_id';

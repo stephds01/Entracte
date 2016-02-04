@@ -46,4 +46,5 @@ class CommandesController extends Controller{
         return view('pages.commandes.index', compact('orderInfo', 'order'));
     }
 
+
 }

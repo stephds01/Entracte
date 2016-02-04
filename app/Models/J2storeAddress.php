@@ -4,7 +4,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class J2storeAddress extends Model {
 
+    protected $connection = 'mysql2';
     protected $table = 'u16w2_j2store_address';
+
 
     protected $fillable = [
         'id',

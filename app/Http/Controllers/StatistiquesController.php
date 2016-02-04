@@ -10,6 +10,7 @@ namespace app\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\J2storeOrder;
 
 class StatistiquesController extends Controller{
 
@@ -23,7 +24,15 @@ class StatistiquesController extends Controller{
 
 
     public function index(){
-        return view('pages.statistiques.index');
+        $order = J2storeOrder::all();
+        $paypal = J2storeOrder::where('orderpayment_type', 'payment_paypal')->sum('order_total');
+        $cash = J2storeOrder::where('orderpayment_type', 'payment_cash')->get();
+        $moneyorder = J2storeOrder::where('orderpayment_type', 'payment_moneyorder')->get();
+
+//dd($paypal);
+        return view('pages.statistiques.index', compact('order','paypal','cash', 'moneyorder'));
     }
+
+
 
 }

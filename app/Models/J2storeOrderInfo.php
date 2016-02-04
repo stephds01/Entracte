@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class J2storeOrderInfo extends Model
 {
-
+    protected $connection = 'mysql2';
     protected $table = 'u16w2_j2store_orderinfo';
 
     protected $primaryKey = 'order_id';
@@ -41,7 +41,7 @@ class J2storeOrderInfo extends Model
 //     * Le model sert a faire les relations entre les tables
 //     *****************************************************************/
 
-//Function qui met en relation la méthode 'Order' avec la table Order
+//Function qui met en relation la mï¿½thode 'Order' avec la table Order
     public function Order()
     {
         return $this->belongsTo('App\Models\J2storeOrder');

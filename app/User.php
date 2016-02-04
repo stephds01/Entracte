@@ -8,13 +8,16 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
+
 	use Authenticatable, CanResetPassword;
+	protected $connection = 'mysql';
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
+
 	protected $table = 'users';
 
 	/**
