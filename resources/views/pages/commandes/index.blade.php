@@ -19,27 +19,33 @@
                     <th>Heures de commande</th>
                     <th>Clients</th>
                     <th>Adresse</th>
-                    <th>Code Postal</th>
-                    <th>Localité</th>
                     <th>Montant</th>
-                    <th>Logo</th>
+                    <th>Statut</th>
                     <th>Détails</th>
                 </tr>
 
                 @foreach($orderInfo as $item)
-
-                <tr>
-                    <td>{{ $item->order_id }}</td>
-                    <td>{{ $item->order->created_date }}</td>
-                    <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
-                    <td>{{ $item->billing_address_1 }}</td>
-                    <td>{{ $item->billing_zip }}</td>
-                    <td>{{ $item->billing_city }}</td>
-                    <td>{{ $item->order->order_total}}</td>
-                    <td></td>{{--<td><i class=" {{ status($item->orderStatus->order_state) }}"></i></td>--}}
-                    <td><a href="{{ URL::to( '/details') }}/{{ $item->order_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
-                </tr>
+                    @if($item->order->order_state_id === 1)
+                        <tr>
+                            <td>{{ $item->order_id }}</td>
+                            <td>{{ $item->order->created_date }}</td>
+                            <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
+                            <td>{{ $item->billing_address_1 }}<br>
+                                {{ $item->billing_zip }}<br>
+                                {{ $item->billing_city }}
+                            </td>
+                            <td>{{ $item->order->order_total}}</td>
+                            <td><i class="fa fa-clock-o fa-2x"></i></td>
+                            <td><a href="{{ URL::to( '/details') }}/{{ $item->order_id }}">Voir</a><i class="fa fa-location-arrow fa-2x"></i></td>
+                        </tr>
+                    @endif
                 @endforeach
+
+                    @if(count($order)=== 0)
+                        <tr>
+                            <td colspan="9">Aucune commande en attente</td>
+                        </tr>
+                    @endif
 
 
 
@@ -48,9 +54,8 @@
         </div>
 
         <div class="ent-commande-footer">
-            <div><i class="fa fa-star fa-2x"></i> Non Lu</div>
-            <div><i class="fa fa-clock-o fa-2x"></i> En cours de traitement</div>
-            <div><i class="fa fa-exclamation-circle fa-2x"></i> En retard</div>
+            <div><i class="fa fa-clock-o fa-2x"></i>En cours de traitement</div>
+            <div><i class="fa fa-exclamation-circle fa-2x"></i> Commande Annulée</div>
             <div><i class="fa fa-motorcycle fa-2x"></i> En cours de livraison</div>
             <div><i class="fa fa-check-square-o fa-2x"></i> Livré</div>
         </div>
