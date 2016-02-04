@@ -97,7 +97,7 @@
                 <tr>
                     <td>{{ $item->orderitem_sku }}</td>
                     <td>{{ $item->orderitem_name }}</td>
-                    <td>{{ $item->orderitem_attributes }} </td>
+                    {{--<td>{{ $item->orderitem_attributes }} </td>--}}
                     <td>{{ $item->orderitem_price }} €</td>
                     <td>{{ $item->orderitem_quantity }}</td>
                     <td>{{ $item->orderitem_discount }}</td>

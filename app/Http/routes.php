@@ -15,20 +15,22 @@
 
 //page Home
 Route::get('/', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
+////Route::get('home', 'HomeController@contact');
 
 //Historique de commandes  (page commandes / histo.blade)
 	Route::get('/historique', 'CommandesController@index');
 
 
 //Commandes en attente (page commandes / index.blade)
-Route::get('/commandes', 'CommandesController@waitCom');
+//Route::get('/commandes', 'CommandesController@waitCom');
 
 
 //Détails de commandes
 //Route::get('/details', 'DetailsController@index');
 //Route::get('/details/{order_id}', 'DetailsController@details');
-Route::get('/details/{order_id}', 'DetailsController@commande');
-Route::post('/details/{order_id}', ['as' => 'valid_status', 'uses' => 'DetailsController@update']);
+Route::get('/commande/{order_id}', 'DetailsController@commande');
+Route::post('/commande/{order_id}', ['as' => 'valid_status', 'uses' => 'DetailsController@update']);
 //Route::get('/details', 'DetailsController@index');
 //Route::get('/details/{orderitem_id}', 'DetailsController@orderDetail');
 

@@ -47,7 +47,8 @@ class DetailsController extends Controller {
             $order->save();
         }
 
-        return redirect()->action('HomeController@index');
+//        return view()->action('HomeController@index');
+            return redirect()->back();
     }
 
 }

@@ -50,6 +50,12 @@ class HomeController extends Controller {
 
 	}
 
+	    public function contact()
+    {
+        $tri = J2storeOrder::first()->contact->order_state;
+        return $this->hasOne('tri');
+    }
+
 
 
 

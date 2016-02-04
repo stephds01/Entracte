@@ -5,7 +5,8 @@ use Illuminate\Database\Eloquent;
 
 class J2storeOrderItem extends Model {
 
-	protected $table = 'u16w2_j2store_orderitems';
+    protected $connection = 'mysql2';
+    protected $table = 'u16w2_j2store_orderitems';
 
     protected $primaryKey = 'order_id';
     public $timestamps =false;
