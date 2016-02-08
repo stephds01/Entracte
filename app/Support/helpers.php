@@ -5,6 +5,11 @@
  * Date: 22/09/2015
  * Time: 17:29
  */
+
+/**
+ * @param $statusIdLogo
+ * @return string
+ */
 function status($statusIdLogo)
 {
     switch ($statusIdLogo) {
@@ -23,23 +28,76 @@ function status($statusIdLogo)
 
     }
 }
-//
-//
-//function status($statusIdText)
-//{
-//    switch ($statusId) {
-//        case '1':
-//            return 'Commande en Attente';
-//            break;
-//        case '2':
-//            return 'Annulé';
-//            break;
-//        case '3':
-//            return 'En cours de livraison';
-//            break;
-//        case '4':
-//            return 'Livré';
-//            break;
-//
-//    }
-//}
+
+/**
+ * Convert date Month in french
+ * @param $month
+ * @return string
+ */
+function dateConvert($month) {
+    switch ($month) {
+        case 'January':
+            return 'Janvier';
+            break;
+        case 'February':
+            return 'Février';
+            break;
+        case 'March':
+            return 'Mars';
+            break;
+        case 'April':
+            return 'Avril';
+            break;
+        case 'May':
+            return 'Mai';
+            break;
+        case 'June':
+            return 'Juin';
+            break;
+        case 'July':
+            return 'Juillet';
+            break;
+        case 'August':
+            return 'Août';
+            break;
+        case 'September':
+            return 'Septembre';
+            break;
+        case 'October':
+            return 'Octobre';
+            break;
+        case 'November':
+            return 'Novembre';
+            break;
+        case 'December':
+            return 'Décembre';
+            break;
+    }
+}
+
+/**
+ * @param $date
+ * @internal param $day
+ * @return int
+ */
+function getDay($date){
+    $create = explode('-', $date);
+    $day = explode(' ', $create[2]);
+    return intval($day[0]);
+}
+
+/**
+ * @param $date
+ * @return string
+ */
+function takeDate($date){
+    $create = explode('-', $date);
+    $y = $create[0];
+    $m = $create[1];
+    $D = explode(' ', $create[2]);
+    $d = $D[0];
+    $data = $y.'-'.$m.'-'.$d;
+    return $data;
+
+}
+

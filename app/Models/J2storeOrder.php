@@ -37,6 +37,14 @@ class J2storeOrder extends Model {
     }
 
 
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeValid($query)
+    {
+        return $query->where('order_state_id', 1)->orWhere('order_state_id', 2)->orWhere('order_state_id', 4);
+    }
 
 // A mettre dans le controler
 //    public function contact()

@@ -53,26 +53,23 @@
                             <i class="fa fa-clock-o fa-2x"></i>
                         @elseif($order->order_state_id == 2)
                             <i class="fa fa-check-square-o fa-2x"></i>
-                        @elseif($order->order_state_id == 3)
+                        @elseif($order->order_state_id == 3 || $order->order_state_id == 5)
                             <i class="fa fa-exclamation-circle fa-2x"></i>
-                        @elseif($order->order_state_id == 4)
-                            <i class="fa fa-motorcycle fa-2x"></i>
                         @endif
                     </p>
                     <form action="{{route('valid_status')}}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="order_id" value="{{ $order->order_id }}">
-                    <p>
-                        <label for="order_state">Statut de la commande</label>
-                        <select name="order_state" id="order_state">
-                            <option value="">...</option>
-                            <option value="stay">En cours de traitement</option>
-                            <option value="livraison"><i class="fa fa-motorcycle fa-2x"></i> En cours de livraison</option>
-                            <option value="confirm"><i class="fa fa-check-square-o fa-2x"></i> Livré</option>
-                            <option value="stop"><i class="fa fa-exclamation-circle fa-2x"></i> Commande Annulée</option>
-                        </select>
-                        <input type="submit" value="valider" name="state">
-                    </p>
+                        <p>
+                            <label for="order_state">Statut de la commande</label>
+                            <select name="order_state" id="order_state">
+                                <option value="">...</option>
+                                <option value="stay">En cours de traitement</option>
+                                <option value="confirm"><i class="fa fa-check-square-o fa-2x"></i> Livré</option>
+                                <option value="stop"><i class="fa fa-exclamation-circle fa-2x"></i> Commande Annulée</option>
+                            </select>
+                            <input type="submit" value="valider" name="state">
+                        </p>
                     </form>
                 </div>
 

@@ -40,9 +40,6 @@ class DetailsController extends Controller {
             else if($request->order_state === 'stop'){
                 $order->order_state_id = 3;
             }
-            else if($request->order_state === 'livraison'){
-                $order->order_state_id = 4;
-            }
 
             $order->save();
         }

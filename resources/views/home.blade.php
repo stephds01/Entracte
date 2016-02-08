@@ -6,9 +6,10 @@
     @include('pages.components.menu')
     <section class="ent-home-container-global">
             <article>
-                <p>{{count($order->where('order_state_id', 1))+count($order->where('order_state_id', 4))}} commandes en cours</p>
-                <p>{{count($order->where('order_state_id', 2))}} commandes livrées</p>
-                <p>{{count($order->where('order_state_id', 3))}} commandes annulées</p>
+                <p>{{count($order)}} commandes au total</p>
+                <p>{{count($order->where('order_state_id', '1'))+count($order->where('order_state_id', '4'))}} commandes en cours</p>
+                <p>{{count($order->where('order_state_id', '2'))}} commandes livrées</p>
+                <p>{{count($order->where('order_state_id', '3'))+count($order->where('order_state_id', '5'))}} commandes annulées</p>
                 <p>Total CA : {{$total}} €</p>
             </article>
 

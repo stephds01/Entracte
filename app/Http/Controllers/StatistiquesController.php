@@ -24,13 +24,38 @@ class StatistiquesController extends Controller{
 
 
     public function index(){
-        $order = J2storeOrder::all();
-        $paypal = J2storeOrder::where('orderpayment_type', 'payment_paypal')->sum('order_total');
-        $cash = J2storeOrder::where('orderpayment_type', 'payment_cash')->get();
-        $moneyorder = J2storeOrder::where('orderpayment_type', 'payment_moneyorder')->get();
+        /*jour*/
 
-//dd($paypal);
-        return view('pages.statistiques.index', compact('order','paypal','cash', 'moneyorder'));
+        $date = '2016-02-04';
+        $test = J2storeOrder::all();
+
+//        dd($date, $test->toArray());
+
+        foreach($test as $v){
+            if(takeDate($v->created_date) == $date){
+                var_dump(takeDate($v->created_date));
+            } else {
+                var_dump('oups');
+            }
+        }
+
+        $total = floatval(J2storeOrder::sum('order_total'));
+        $paypal = floatval(J2storeOrder::where('orderpayment_type', 'payment_paypal')->sum('order_total'));
+        $cash = floatval(J2storeOrder::where('orderpayment_type', 'payment_cash')->sum('order_total'));
+        $moneyorder = floatval(J2storeOrder::where('orderpayment_type', 'payment_moneyorder')->sum('order_total'));
+
+        /*semaine*/
+//si annee bissextil alors date('L') = 1 sinon = 0
+        /*mois*/
+
+        /*année*/
+
+        return view('pages.statistiques.index', compact(
+            'total',
+            'paypal',
+            'cash',
+            'moneyorder'
+        ));
     }
 
 
