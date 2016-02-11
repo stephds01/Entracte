@@ -60,7 +60,7 @@
                     @if($item->order_state_id == 1 || $item->order_state_id == 4)
                         <tr>
                             <td>{{ $item->order_id }}</td>
-                            <td>{{ date('H:i:s d/m/Y',strtotime($item->created_date ))}}</td>
+                            <td>{{ date('d/m/Y H:i:s',strtotime($item->created_date )+3600*($timezone+date("I")))}}</td>
                             <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
                             <td>{{ $item->billing_address_1 }}<br>
                                 {{ $item->billing_zip }}<br>

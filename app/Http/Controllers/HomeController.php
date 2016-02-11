@@ -37,6 +37,9 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+		$timestamp = time()+date("Z");
+		$timezone = 1;
+//		dd(date('d/m/Y H:i:s',$timestamp+3600*($timezone+date("I"))));
         $order = J2storeOrder::all();
         $total = floatval(J2storeOrder::isValid()->sum('order_total'));
 		$orderInfo = J2storeOrderInfo::join('u16w2_j2store_orders', function($q){
@@ -44,7 +47,7 @@ class HomeController extends Controller {
 		})->orderBy('created_date', 'desc')
 			->get();
 
-		return view('home', compact('orderInfo', 'order', 'total'));
+		return view('home', compact('orderInfo', 'order', 'total', 'timezone'));
 
 	}
 
