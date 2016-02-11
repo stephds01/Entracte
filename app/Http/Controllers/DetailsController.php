@@ -24,8 +24,9 @@ class DetailsController extends Controller {
             ->select('orderitem_id', 'orderitem_attribute_names')
             ->get();
 //        dd($attrib->toArray());
+        $timezone = 1;
 
-            return view('pages.commandes.details', compact('order','orderInfo','orderItems','reduc', 'attrib'));
+            return view('pages.commandes.details', compact('order','orderInfo','orderItems','reduc', 'attrib', 'timezone'));
     }
 
     /**
