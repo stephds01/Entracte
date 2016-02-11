@@ -9,10 +9,19 @@
   background-size: cover;
   margin-bottom:35px;
 
+  .ent-bandeauMenu {
+    width: 90%;
+    margin: 10px auto;
+
+    ul li:not(.active) a {
+      color: #ffffff;
+    }
+    ul li a:hover {
+      color: #D61F61;
+      font-weight: 400;
+    }
+  }
 }
-
-
-
 .ent-commande-tab{
   margin: 0 auto;
   width: 95%;

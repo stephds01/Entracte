@@ -56,7 +56,6 @@
         <div class="ent-commande-footer">
             <div><i class="fa fa-clock-o fa-2x"></i>En cours de traitement</div>
             <div><i class="fa fa-exclamation-circle fa-2x"></i> Commande Annulée</div>
-            <div><i class="fa fa-motorcycle fa-2x"></i> En cours de livraison</div>
             <div><i class="fa fa-check-square-o fa-2x"></i> Livré</div>
         </div>
     </section>
