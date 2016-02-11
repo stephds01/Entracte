@@ -19,15 +19,14 @@ class CommandesController extends Controller{
         $orderInfo = J2storeOrderInfo::all();
         $orderItem = J2storeOrderItem::all();
 
-        $wait = $order->where('order_state_id', 1);
-        $confirm = $order->where('order_state_id', 2);
-        $stop = $order->where('order_state_id', 3);
-        $road = $order->where('order_state_id', 4);
+        $wait = $order->where('order_state_id', 1)->count();
+        $confirm = $order->where('order_state_id', 2)->count();
+        $stop = $order->where('order_state_id', 3)->count();
+        $road = $order->where('order_state_id', 4)->count();
+
         return view('pages.commandes.histo', compact(
                 'orderInfo',
                 'order',
-                'orderWait',
-                'orderInfoWait',
                 'orderItem',
                 'wait',
                 'confirm',

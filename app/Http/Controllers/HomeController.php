@@ -34,20 +34,14 @@ class HomeController extends Controller {
 	/**
 	 * Show the application dashboard to the user.
 	 *
-	 * @return Response
 	 */
 	public function index()
 	{
         $order = J2storeOrder::all();
-//		dd($order->toArray());
+        $total = floatval(J2storeOrder::isValid()->sum('order_total'));
         $orderInfo = J2storeOrderInfo::all();
-		$orderItem = J2storeOrderItem::all();
-		$total = '';
-		foreach($order as $price){
-			$total+=floatval($price['order_total']);
-		}
 
-		return view('home', compact('orderInfo', 'order', 'orderWait', 'orderItem', 'total'));
+		return view('home', compact('orderInfo', 'order', 'total'));
 
 	}
 

@@ -22,13 +22,14 @@
     display:  flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 100%;
 
     padding: 6px 15px;
 
     .ent-footer-copyright{
       font-size:  12px;
       align-self: center;
-      margin-right: 720px;
+      width: 80%;
 
       a{
         color:  #069AC8;
@@ -40,6 +41,7 @@
     .ent-footer-date{
       font-size:  16px;
       align-self: center;
+      width: 10%;
     }
 
   }

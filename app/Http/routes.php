@@ -36,6 +36,7 @@ Route::post('/commande/{order_id}', ['as' => 'valid_status', 'uses' => 'DetailsC
 
 //Statistiques
 Route::get('/statistiques', 'StatistiquesController@index');
+Route::post('/statistiques', 'StatistiquesController@datePicker');
 
 //Facture
 Route::get('/factures', 'FacturesController@index');

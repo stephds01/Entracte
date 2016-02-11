@@ -1215,8 +1215,7 @@ img {
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
   height: auto;
@@ -2804,8 +2803,7 @@ output {
   border: 1px solid #cccccc;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
 .form-control:focus {
@@ -3670,8 +3668,7 @@ input[type="button"].btn-block {
 
 .fade {
   opacity: 0;
-  -webkit-transition: opacity 0.15s linear;
-          transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
 }
 
 .fade.in {
@@ -3700,12 +3697,9 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition-property: height, visibility;
-          transition-property: height, visibility;
-  -webkit-transition-duration: 0.35s;
-          transition-duration: 0.35s;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease;
+  transition-property: height, visibility;
+  transition-duration: 0.35s;
+  transition-timing-function: ease;
 }
 
 .caret {
@@ -5261,7 +5255,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
 .label {
   display: inline;
-  padding: 0.2em 0.6em 0.3em;
+  padding: .2em .6em .3em;
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
@@ -5450,8 +5444,7 @@ a.badge:focus {
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 4px;
-  -webkit-transition: border 0.2s ease-in-out;
-          transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
 }
 
 .thumbnail > img,
@@ -5602,13 +5595,11 @@ a.thumbnail.active {
   text-align: center;
   background-color: #337ab7;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: width 0.6s ease;
-          transition: width 0.6s ease;
+  transition: width 0.6s ease;
 }
 
 .progress-striped .progress-bar,
 .progress-bar-striped {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px;
 }
@@ -5624,7 +5615,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-success {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5633,7 +5623,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-info {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5642,7 +5631,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-warning {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -5651,7 +5639,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-danger {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -6409,9 +6396,9 @@ button.close {
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
   transform: translate(0, -25%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-          transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
 .modal.in .modal-dialog {
@@ -6797,8 +6784,7 @@ button.close {
 .carousel-inner > .item {
   display: none;
   position: relative;
-  -webkit-transition: 0.6s ease-in-out left;
-          transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
 }
 
 .carousel-inner > .item > img,
@@ -6808,9 +6794,9 @@ button.close {
 
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
-    -webkit-transition: -webkit-transform 0.6s ease-in-out;
-            transition: -webkit-transform 0.6s ease-in-out;
+    transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-perspective: 1000;
@@ -6890,7 +6876,6 @@ button.close {
 }
 
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
@@ -6899,7 +6884,6 @@ button.close {
 .carousel-control.right {
   left: auto;
   right: 0;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
@@ -7397,12 +7381,9 @@ label,
   width: 100%;
   height: 50px;
   background-color: #D61F61;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
@@ -7418,18 +7399,16 @@ label,
 }
 
 .ent-footer-container .ent-footer-elements {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+  width: 100%;
   padding: 6px 15px;
 }
 
@@ -7438,7 +7417,7 @@ label,
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
-  margin-right: 720px;
+  width: 80%;
 }
 
 .ent-footer-container .ent-footer-elements .ent-footer-copyright a {
@@ -7451,6 +7430,7 @@ label,
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
+  width: 10%;
 }
 
 /************************************
@@ -7462,19 +7442,15 @@ label,
 
 .ent-menu-container .ent-menu {
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   width: 100%;
   background-color: #069AC8;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -7529,6 +7505,35 @@ label,
   background-color: #069AC8;
   background-size: cover;
   margin-bottom: 35px;
+}
+
+.ent-home-container-global .home-stats {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.ent-home-container-global .home-stats div {
+  display: inline-block;
+  background-color: #ffffff;
+  margin: 20px 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 10px;
+  color: #069AC8;
+  border: 3px solid #D61F61;
+}
+
+.ent-home-container-global .home-stats div p {
+  margin-top: 30%;
+  font-weight: 400;
+}
+
+.ent-home-container-global .home-stats div p span {
+  display: block;
+  font-weight: 700;
+  font-size: 26px;
 }
 
 .ent-home-tab {
@@ -7590,16 +7595,12 @@ label,
 .ent-home-footer {
   background-color: #f4f4f4;
   width: 90%;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: end;
   -webkit-align-items: flex-end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -7632,12 +7633,9 @@ label,
 .ent-detail-container-global .ent-detail-infoCommande .ent-detail-container {
   width: 90%;
   margin: 0 auto;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
@@ -7645,7 +7643,6 @@ label,
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   padding-top: 20px;
-  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -7727,263 +7724,6 @@ label,
   font-weight: bold;
 }
 
-/***************************************************
-*           Statistique
-***************************************************/
-.ent-statistique-container {
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 20px;
-  padding: 10px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.ent-statistique-container .ent-statistique-graphique {
-  width: 42%;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
-  border: 2px solid #D61F61;
-  background-color: #f4f4f4;
-  border-radius: 50px;
-}
-
-.ent-statistique-container .ent-statistique-graphique .chart {
-  position: relative;
-  width: 500px;
-  height: 250px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.ent-statistique-container .ent-statistique-graphique .chart .graph {
-  -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
-}
-
-.ent-statistique-container .ent-statistique-graphique .hold {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  clip: rect(0px, 200px, 200px, 100px);
-  left: 30px;
-  top: 30px;
-}
-
-.ent-statistique-container .ent-statistique-graphique .pie {
-  position: absolute;
-  /*	width:100px;
-          height:200px;
-          -moz-border-radius:100px 0 0 100px;
-          -webkit-border-radius:100px 0 0 100px;
-          border-radius:100px 0 0 100px;
-          -moz-transform-origin:right center;
-          -webkit-transform-origin:right center;
-          transform-origin:right center; */
-  width: 200px;
-  height: 200px;
-  clip: rect(0px, 100px, 200px, 0px);
-  border-radius: 100px;
-}
-
-.ent-statistique-container .ent-statistique-graphique .hold.gt50 {
-  clip: rect(auto, auto, auto, auto);
-}
-
-.ent-statistique-container .ent-statistique-graphique .pie.fill {
-  -webkit-transform: rotate(180deg) !important;
-  -ms-transform: rotate(180deg) !important;
-      transform: rotate(180deg) !important;
-}
-
-.ent-statistique-container .ent-statistique-graphique .legend {
-  /*clear:left;
-      float:left;*/
-  font-size: 12px;
-  padding: 5px;
-  width: 200px;
-  height: 120px;
-  margin-left: 300px;
-  margin-top: 125px;
-}
-
-.ent-statistique-container .ent-statistique-graphique .legend DIV {
-  margin: 3px 0;
-}
-
-.ent-statistique-container .ent-statistique-graphique .legend span {
-  float: right;
-  padding-left: .5em;
-}
-
-.ent-statistique-container .ent-statistique-graphique #paypal {
-  margin-left: 10px;
-  margin-top: -10px;
-}
-
-.ent-statistique-container .ent-statistique-graphique #paypal .pie {
-  background-color: #ffff2c;
-  border-color: #ffff2c;
-  -webkit-transform: rotate(116.28deg);
-  -ms-transform: rotate(116.28deg);
-      transform: rotate(116.28deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #paypal-lbl {
-  border-left: #ffff2c solid 1em;
-  padding-left: .5em;
-}
-
-.ent-statistique-container .ent-statistique-graphique #cheque {
-  -webkit-transform: rotate(116.28deg);
-  -ms-transform: rotate(116.28deg);
-      transform: rotate(116.28deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #cheque .pie {
-  background-color: #31f5ff;
-  border-color: #31f5ff;
-  -webkit-transform: rotate(109.8deg);
-  -ms-transform: rotate(109.8deg);
-      transform: rotate(109.8deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #cheque-lbl {
-  border-left: #31f5ff solid 1em;
-  padding-left: .5em;
-}
-
-.ent-statistique-container .ent-statistique-graphique #espece {
-  -webkit-transform: rotate(226.08deg);
-  -ms-transform: rotate(226.08deg);
-      transform: rotate(226.08deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #espece .pie {
-  background-color: #c743ce;
-  border-color: #c743ce;
-  -webkit-transform: rotate(10.08deg);
-  -ms-transform: rotate(10.08deg);
-      transform: rotate(10.08deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #espece-lbl {
-  border-left: #c743ce solid 1em;
-  padding-left: .5em;
-}
-
-.ent-statistique-container .ent-statistique-graphique #cb {
-  -webkit-transform: rotate(236.16deg);
-  -ms-transform: rotate(236.16deg);
-      transform: rotate(236.16deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #cb .pie {
-  background-color: #66c3bd;
-  border-color: #66c3bd;
-  -webkit-transform: rotate(6.12deg);
-  -ms-transform: rotate(6.12deg);
-      transform: rotate(6.12deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #cb-lbl {
-  border-left: #66c3bd solid 1em;
-  padding-left: .5em;
-}
-
-.ent-statistique-container .ent-statistique-graphique #ticketResto {
-  -webkit-transform: rotate(242.28deg);
-  -ms-transform: rotate(242.28deg);
-      transform: rotate(242.28deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #ticketResto .pie {
-  background-color: #FACE9A;
-  border-color: #FACE9A;
-  -webkit-transform: rotate(5.76deg);
-  -ms-transform: rotate(5.76deg);
-      transform: rotate(5.76deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #ticketResto-lbl {
-  border-left: #face9a solid 1em;
-  padding-left: .5em;
-}
-
-.ent-statistique-container .ent-statistique-graphique #autre {
-  -webkit-transform: rotate(248.04deg);
-  -ms-transform: rotate(248.04deg);
-      transform: rotate(248.04deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #autre .pie {
-  background-color: #37ed5f;
-  border-color: #37ed5f;
-  -webkit-transform: rotate(111.96deg);
-  -ms-transform: rotate(111.96deg);
-      transform: rotate(111.96deg);
-}
-
-.ent-statistique-container .ent-statistique-graphique #autre-lbl {
-  border-left: #37ed5f solid 1em;
-  padding-left: .5em;
-}
-
-.ent-statistique-tab {
-  width: 50%;
-}
-
-.ent-statistique-tab table {
-  border-collapse: collapse;
-  margin: 0 auto;
-  padding-top: 20px;
-}
-
-.ent-statistique-tab tr {
-  border: 2px solid #069AC8;
-  height: 50px;
-}
-
-.ent-statistique-tab th {
-  color: white;
-  background-color: #D61F61;
-  font-size: 14px;
-  padding-top: 20px;
-  width: 100px;
-}
-
-.ent-statistique-tab td {
-  font-size: 12px;
-  background-color: white;
-  text-align: center;
-}
-
-.ent-statistique-recherche {
-  margin-left: 242px;
-  margin-top: 25px;
-  color: #FFF;
-}
-
-.ent-statistique-recherche option {
-  width: 30px;
-}
-
 /******************************************
 *           Commande
 *******************************************/
@@ -7992,6 +7732,20 @@ label,
   background-color: #069AC8;
   background-size: cover;
   margin-bottom: 35px;
+}
+
+.ent-commande-container-global .ent-bandeauMenu {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.ent-commande-container-global .ent-bandeauMenu ul li:not(.active) a {
+  color: #ffffff;
+}
+
+.ent-commande-container-global .ent-bandeauMenu ul li a:hover {
+  color: #D61F61;
+  font-weight: 400;
 }
 
 .ent-commande-tab {
@@ -8049,16 +7803,12 @@ label,
 .ent-commande-footer {
   background-color: #f4f4f4;
   width: 90%;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: end;
   -webkit-align-items: flex-end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -8069,6 +7819,77 @@ label,
 .ent-commande-footer div {
   padding-left: 20px;
   font-size: 11px;
+}
+
+/*fiches statistics*/
+.ent-statistique-container-global {
+  margin: 0 auto;
+}
+
+.ent-statistique-container-global section {
+  background-color: #fff;
+  padding: 5px;
+  margin: 10px 3px;
+  width: 24%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  min-height: 450px;
+  border-radius: 10px;
+}
+
+.ent-statistique-container-global section .message {
+  font-weight: 700;
+}
+
+.ent-statistique-container-global section h2 {
+  font-weight: 300;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.ent-statistique-container-global section h2 form {
+  display: inline-block;
+}
+
+.ent-statistique-container-global section h2 form input {
+  text-align: center;
+  width: 72%;
+  font-size: 14px;
+  background-color: #e6e6e6;
+  padding: 6px;
+  border: none;
+}
+
+.ent-statistique-container-global section h2 form input:placeholder-shown {
+  font-weight: bold;
+}
+
+.ent-statistique-container-global section h2 form select {
+  width: 60%;
+  font-size: 14px;
+  background-color: #e6e6e6;
+  padding: 6px;
+  border: none;
+}
+
+.ent-statistique-container-global section ul li {
+  padding: 10px;
+  margin: 5px auto;
+  font-size: 16px;
+  border-bottom: 1px solid #069AC8;
+}
+
+.ent-statistique-container-global section ul li span {
+  font-weight: 700;
+}
+
+.ent-statistique-container-global section .total {
+  font-size: 18px;
+}
+
+.ent-statistique-container-global ul, .ent-statistique-container-global li {
+  list-style: none;
 }
 
 /*
