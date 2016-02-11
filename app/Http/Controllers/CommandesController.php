@@ -15,6 +15,8 @@ class CommandesController extends Controller{
      */
     public function index()
     {
+        $timezone = 1;
+
         $order = J2storeOrder::all();
         $orderInfo = J2storeOrderInfo::join('u16w2_j2store_orders', function($q){
             $q->on('u16w2_j2store_orderinfo.order_id', '=', 'u16w2_j2store_orders.order_id');
@@ -36,7 +38,8 @@ class CommandesController extends Controller{
                 'wait',
                 'confirm',
                 'stop',
-                'road'
+                'road',
+                'timezone'
             )
         );
     }

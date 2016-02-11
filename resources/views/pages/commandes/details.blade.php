@@ -21,7 +21,7 @@
                         <li>ID commande : {{ $order->order_id }}</li>
                         <li>Facture N° : {{ $order->order_id }}</li>
                         <li>Montant : {{ $order->order_total }}</li>
-                        <li>Date : {{ date('H:i:s d/m/Y',strtotime($order->created_date)) }}</li>
+                        <li>Date : {{ date('d/m/Y H:i:s',strtotime($order->created_date)+3600*($timezone+date("I")))}}</li>
                     </ul>
                 </div>
                 <div class="ent-detail-informationClient">
