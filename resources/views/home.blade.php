@@ -57,16 +57,16 @@
 
                 @foreach($orderInfo as $item)
 
-                    @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
+                    @if($item->order_state_id == 1 || $item->order_state_id == 4)
                         <tr>
                             <td>{{ $item->order_id }}</td>
-                            <td>{{ date('H:i:s d/m/Y',strtotime($item->order->created_date ))}}</td>
+                            <td>{{ date('H:i:s d/m/Y',strtotime($item->created_date ))}}</td>
                             <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
                             <td>{{ $item->billing_address_1 }}<br>
                                 {{ $item->billing_zip }}<br>
                                 {{ $item->billing_city }}
                             </td>
-                            <td>{{ floatval($item->order->order_total)}} €</td>
+                            <td>{{ floatval($item->order_total)}} €</td>
                             <td><i class="fa fa-clock-o fa-2x"></i></td>
                             <td><a href="{{ URL::to( '/commande') }}/{{ $item->order_id }}">
                                     <i class="fa fa-plus fa-2x"></i></a>

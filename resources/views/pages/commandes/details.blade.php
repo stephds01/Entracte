@@ -21,7 +21,7 @@
                         <li>ID commande : {{ $order->order_id }}</li>
                         <li>Facture N° : {{ $order->order_id }}</li>
                         <li>Montant : {{ $order->order_total }}</li>
-                        <li>Date : {{ $order->created_date }}</li>
+                        <li>Date : {{ date('H:i:s d/m/Y',strtotime($order->created_date)) }}</li>
                     </ul>
                 </div>
                 <div class="ent-detail-informationClient">
@@ -39,7 +39,7 @@
                 <div class="ent-detail-infoPaiement">
                     <h2>Information Paiement</h2>
                     <ul>
-                        <li>Payé en : {{ $order->orderpayment_type }}</li>
+                        <li>{{ paiement($order->orderpayment_type) }}</li>
                         <li>Status du paiement : {{ $order->transaction_status }} </li>
                     </ul>
 
@@ -84,7 +84,6 @@
                     <th>Options</th>
                     <th>Prix Unitaire</th>
                     <th>Quantité</th>
-                    <th>Réduction</th>
                     <th>Prix Total</th>
                 </tr>
 
@@ -95,13 +94,13 @@
                     <td>
                     @foreach($attrib as $v)
 
-                    <?php $sku= $v->orderitem_sku;
+                    <?php $sku= $v->orderitem_id;
                             $opt=$v->orderitem_attribute_names;
                     $opt = explode('\\', $opt);
                         ?>
                     @foreach($opt as $k=>$val)
                         @if($val == '"value')
-                            @if($sku == $item->orderitem_sku)
+                            @if($sku == $item->orderitem_id)
                                     {{str_replace('"', '', $opt[$k+2])}}
                                     <br>
                                 @endif
@@ -111,13 +110,23 @@
                         </td>
                         <td>{{ floatval($item->orderitem_price) }} €</td>
                     <td>{{ $item->orderitem_quantity }}</td>
-                    <td>{{ floatval($item->orderitem_discount) }} €</td>
                     <td>{{ floatval($item->orderitem_final_price) }} €</td>
 
                 </tr>
                 @endforeach
                 <tr>
-                    <td colspan="6" class="right">Total</td>
+                    <td colspan="6" class="right"></td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="right">Sous-total</td>
+                    <td>{{ floatval($order->order_subtotal)}} €</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="right">Réduction</td>
+                    <td>{{ floatval($order->order_discount)}} €</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="right">Total</td>
                     <td>{{ floatval($order->order_total) }} €</td>
                 </tr>
             </table>
