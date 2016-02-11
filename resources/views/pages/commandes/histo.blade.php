@@ -8,12 +8,12 @@
     <section class="ent-commande-container-global">
 
         <!-- Nav tabs -->
-        <div class="ent-bandeauTitre-container">
+        <div class="ent-bandeauMenu">
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#histo" aria-controls="home" role="tab" data-toggle="tab">Historique</a></li>
-                <li role="presentation"><a href="#wait" aria-controls="profile" role="tab" data-toggle="tab">Commandes en cours</a></li>
-                <li role="presentation"><a href="#confirm" aria-controls="settings" role="tab" data-toggle="tab">Commandes livrées</a></li>
-                <li role="presentation"><a href="#stop" aria-controls="settings" role="tab" data-toggle="tab">Commandes annulées</a></li>
+                <li role="presentation" class="active"><a href="#histo" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-eye"></i> Toutes les commandes</a></li>
+                <li role="presentation"><a href="#wait" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-clock-o"></i> Commandes en cours</a></li>
+                <li role="presentation"><a href="#confirm" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-check-square-o"></i> Commandes livrées</a></li>
+                <li role="presentation"><a href="#stop" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-exclamation-circle"></i> Commandes annulées <i class="fa fa-times"></i></a></li>
             </ul>
         </div>
 
@@ -47,14 +47,16 @@
                                     {{ $item->billing_zip }}<br>
                                     {{ $item->billing_city }}
                                 </td>
-                                <td>{{ $item->order->order_total}}</td>
+                                <td>{{ floatval($item->order->order_total)}} €</td>
                                 <td>
                                     @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
                                         <i class="fa fa-clock-o fa-2x"></i>
                                     @elseif($item->order->order_state_id == 2)
                                         <i class="fa fa-check-square-o fa-2x"></i>
-                                    @elseif($item->order->order_state_id == 3 || $item->order->order_state_id == 5)
+                                    @elseif($item->order->order_state_id == 5)
                                         <i class="fa fa-exclamation-circle fa-2x"></i>
+                                    @elseif($item->order->order_state_id == 3)
+                                        <i class="fa fa-times fa-2x"></i>
                                     @endif
                                 </td>
                                 <td>
@@ -64,7 +66,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                        @if(count($order)==0)
+                        @if(is_null(count($order)))
                             <tr>
                                 <td colspan="9">Aucune commande</td>
                             </tr>
@@ -103,14 +105,16 @@
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ $item->order->order_total}}</td>
+                                    <td>{{ floatval($item->order->order_total)}} €</td>
                                     <td>
                                         @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
                                         @elseif($item->order->order_state_id == 2)
                                             <i class="fa fa-check-square-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 3 || $item->order->order_state_id == 5)
+                                        @elseif($item->order->order_state_id == 5)
                                             <i class="fa fa-exclamation-circle fa-2x"></i>
+                                        @elseif($item->order->order_state_id == 3)
+                                            <i class="fa fa-times fa-2x"></i>
                                         @endif
                                     </td>
                                     <td>
@@ -121,7 +125,7 @@
                                 </tr>
                             @endif
                         @endforeach
-                        @if(count($wait)==0)
+                        @if(is_null($wait))
                             <tr>
                                 <td colspan="9">Aucune commande en attente</td>
                             </tr>
@@ -159,14 +163,16 @@
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ $item->order->order_total}}</td>
+                                    <td>{{ floatval($item->order->order_total)}} €</td>
                                     <td>
                                         @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
                                         @elseif($item->order->order_state_id == 2)
                                             <i class="fa fa-check-square-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 3 || $item->order->order_state_id == 5)
+                                        @elseif($item->order->order_state_id == 5)
                                             <i class="fa fa-exclamation-circle fa-2x"></i>
+                                        @elseif($item->order->order_state_id == 3)
+                                            <i class="fa fa-times fa-2x"></i>
                                         @endif
                                     </td>
                                     <td>
@@ -177,7 +183,7 @@
                                 </tr>
                             @endif
                         @endforeach
-                        @if(count($confirm)==0)
+                        @if(is_null($confirm))
                             <tr>
                                 <td colspan="9">Aucune commande livrée</td>
                             </tr>
@@ -214,14 +220,16 @@
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ $item->order->order_total}}</td>
+                                    <td>{{ floatval($item->order->order_total)}} €</td>
                                     <td>
                                         @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
                                         @elseif($item->order->order_state_id == 2)
                                             <i class="fa fa-check-square-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 3 || $item->order->order_state_id == 5)
+                                        @elseif($item->order->order_state_id == 5)
                                             <i class="fa fa-exclamation-circle fa-2x"></i>
+                                        @elseif($item->order->order_state_id == 3)
+                                            <i class="fa fa-times fa-2x"></i>
                                         @endif
                                     </td>
                                     <td>
@@ -232,7 +240,7 @@
                                 </tr>
                             @endif
                         @endforeach
-                        @if(count($stop)=== 0)
+                        @if(is_null($stop))
                             <tr>
                                 <td colspan="9">Aucune commande annulée</td>
                             </tr>
@@ -248,6 +256,7 @@
         <div class="ent-commande-footer">
             <div><i class="fa fa-clock-o fa-2x"></i>En cours de traitement</div>
             <div><i class="fa fa-exclamation-circle fa-2x"></i> Commande Annulée</div>
+            <div><i class="fa fa-times fa-2x"></i> Paiement non finalisé</div>
             <div><i class="fa fa-check-square-o fa-2x"></i> Livré</div>
         </div>
     </section>

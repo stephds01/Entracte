@@ -5,13 +5,18 @@
 
   section {
     background-color: #fff;
-    padding: 10px;
-    margin: 10px 5px;
+    padding: 5px;
+    margin: 10px 3px;
     width: 24%;
     display: inline-block;
     text-align: center;
     vertical-align: top;
-    min-height: 300px;
+    min-height: 450px;
+    border-radius: 10px;
+
+    .message {
+      font-weight:700;
+    }
 
     h2 {
       font-weight:300;
@@ -21,10 +26,38 @@
       form {
         display: inline-block;
         input {
-          width: 80%;
-          padding: 5px;
+          text-align: center;
+          width: 72%;
+          font-size:14px;
+          background-color: #e6e6e6;
+          padding: 6px;
+          border:none;
+          &:placeholder-shown {
+            font-weight:bold;
+          }
+        }
+        select {
+          width: 60%;
+          font-size:14px;
+          background-color: #e6e6e6;
+          padding: 6px;
+          border:none;
         }
       }
+    }
+
+    ul li {
+      padding: 10px;
+      margin: 5px auto;
+      font-size:16px;
+      border-bottom: 1px solid #069AC8;
+      span {
+        font-weight:700;
+      }
+    }
+
+    .total {
+      font-size: 18px;
     }
 
   }

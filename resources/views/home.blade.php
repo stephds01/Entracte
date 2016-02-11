@@ -5,12 +5,36 @@
 
     @include('pages.components.menu')
     <section class="ent-home-container-global">
-            <article>
-                <p>{{count($order)}} commandes au total</p>
-                <p>{{count($order->where('order_state_id', '1'))+count($order->where('order_state_id', '4'))}} commandes en cours</p>
-                <p>{{count($order->where('order_state_id', '2'))}} commandes livrées</p>
-                <p>{{count($order->where('order_state_id', '3'))+count($order->where('order_state_id', '5'))}} commandes annulées</p>
-                <p>Total CA : {{$total}} €</p>
+            <article class="home-stats">
+                <div>
+                    <p>
+                        <span class="text-info">{{count($order)}}</span>
+                        commandes au total
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span class="text-info">{{count($order->where('order_state_id', '1'))+count($order->where('order_state_id', '4'))}}</span>
+                        commandes en cours
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span  class="text-info">{{count($order->where('order_state_id', '2'))}}</span>
+                        commandes livrées
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span  class="text-danger">{{count($order->where('order_state_id', '3'))+count($order->where('order_state_id', '5'))}}</span>
+                        commandes annulées
+                    </p>
+                </div>
+                <div>
+                    <p>Total CA :
+                        <span class="text-success">{{$total}} €</span>
+                    </p>
+                </div>
             </article>
 
 
@@ -42,7 +66,7 @@
                                 {{ $item->billing_zip }}<br>
                                 {{ $item->billing_city }}
                             </td>
-                            <td>{{ $item->order->order_total}}</td>
+                            <td>{{ floatval($item->order->order_total)}} €</td>
                             <td><i class="fa fa-clock-o fa-2x"></i></td>
                             <td><a href="{{ URL::to( '/commande') }}/{{ $item->order_id }}">
                                     <i class="fa fa-plus fa-2x"></i></a>
@@ -63,6 +87,7 @@
         <div class="ent-home-footer">
             <div><i class="fa fa-clock-o fa-2x"></i> En cours de traitement</div>
             <div><i class="fa fa-exclamation-circle fa-2x"></i> Commande Annulée</div>
+            <div><i class="fa fa-times fa-2x"></i> Paiement non finalisé</div>
             <div><i class="fa fa-check-square-o fa-2x"></i> Livré</div>
         </div>
     </section>

@@ -7408,6 +7408,7 @@ label,
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+  width: 100%;
   padding: 6px 15px;
 }
 
@@ -7416,7 +7417,7 @@ label,
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
-  margin-right: 720px;
+  width: 80%;
 }
 
 .ent-footer-container .ent-footer-elements .ent-footer-copyright a {
@@ -7429,6 +7430,7 @@ label,
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
+  width: 10%;
 }
 
 /************************************
@@ -7440,7 +7442,7 @@ label,
 
 .ent-menu-container .ent-menu {
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   width: 100%;
   background-color: #069AC8;
   display: -webkit-flex;
@@ -7503,6 +7505,35 @@ label,
   background-color: #069AC8;
   background-size: cover;
   margin-bottom: 35px;
+}
+
+.ent-home-container-global .home-stats {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.ent-home-container-global .home-stats div {
+  display: inline-block;
+  background-color: #ffffff;
+  margin: 20px 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 10px;
+  color: #069AC8;
+  border: 3px solid #D61F61;
+}
+
+.ent-home-container-global .home-stats div p {
+  margin-top: 30%;
+  font-weight: 400;
+}
+
+.ent-home-container-global .home-stats div p span {
+  display: block;
+  font-weight: 700;
+  font-size: 26px;
 }
 
 .ent-home-tab {
@@ -7703,6 +7734,20 @@ label,
   margin-bottom: 35px;
 }
 
+.ent-commande-container-global .ent-bandeauMenu {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.ent-commande-container-global .ent-bandeauMenu ul li:not(.active) a {
+  color: #ffffff;
+}
+
+.ent-commande-container-global .ent-bandeauMenu ul li a:hover {
+  color: #D61F61;
+  font-weight: 400;
+}
+
 .ent-commande-tab {
   margin: 0 auto;
   width: 95%;
@@ -7783,13 +7828,18 @@ label,
 
 .ent-statistique-container-global section {
   background-color: #fff;
-  padding: 10px;
-  margin: 10px 5px;
+  padding: 5px;
+  margin: 10px 3px;
   width: 24%;
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  min-height: 300px;
+  min-height: 450px;
+  border-radius: 10px;
+}
+
+.ent-statistique-container-global section .message {
+  font-weight: 700;
 }
 
 .ent-statistique-container-global section h2 {
@@ -7803,8 +7853,39 @@ label,
 }
 
 .ent-statistique-container-global section h2 form input {
-  width: 80%;
-  padding: 5px;
+  text-align: center;
+  width: 72%;
+  font-size: 14px;
+  background-color: #e6e6e6;
+  padding: 6px;
+  border: none;
+}
+
+.ent-statistique-container-global section h2 form input:placeholder-shown {
+  font-weight: bold;
+}
+
+.ent-statistique-container-global section h2 form select {
+  width: 60%;
+  font-size: 14px;
+  background-color: #e6e6e6;
+  padding: 6px;
+  border: none;
+}
+
+.ent-statistique-container-global section ul li {
+  padding: 10px;
+  margin: 5px auto;
+  font-size: 16px;
+  border-bottom: 1px solid #069AC8;
+}
+
+.ent-statistique-container-global section ul li span {
+  font-weight: 700;
+}
+
+.ent-statistique-container-global section .total {
+  font-size: 18px;
 }
 
 .ent-statistique-container-global ul, .ent-statistique-container-global li {

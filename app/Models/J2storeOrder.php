@@ -41,9 +41,17 @@ class J2storeOrder extends Model {
      * @param $query
      * @return mixed
      */
-    public function scopeValid($query)
+    public function scopeisValid($query)
     {
-        return $query->where('order_state_id', 1)->orWhere('order_state_id', 2)->orWhere('order_state_id', 4);
+        return $query->whereIn('order_state_id', [1, 2, 4]);
+    }
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeisAbort($query)
+    {
+        return $query->whereIn('order_state_id',[3, 5, '']);
     }
 
 // A mettre dans le controler
@@ -52,6 +60,5 @@ class J2storeOrder extends Model {
 //        $orderInfo = J2storeOrder::first()->contact->order_state;
 //        return $this->hasOne('orderInfo');
 //    }
-//
 
 }

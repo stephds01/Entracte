@@ -101,3 +101,77 @@ function takeDate($date){
 
 }
 
+
+/**
+ * @param $data
+ * @return bool|string
+ */
+function dayStart($data){
+    switch ($data){
+        case 'Monday':
+            $dStart = date('d');
+            return $dStart;
+            break;
+        case 'Tuesday':
+            $dStart = date('d')-1;
+            return $dStart;
+            break;
+        case 'Wednesday':
+            $dStart = date('d')-2;
+            return $dStart;
+            break;
+        case 'Thursday':
+            $dStart = date('d')-3;
+            return $dStart;
+            break;
+        case 'Friday':
+            $dStart = date('d')-4;
+            return $dStart;
+            break;
+        case 'Saturday':
+            $dStart = date('d')-5;
+            return $dStart;
+            break;
+        case 'Sunday':
+            $dStart = date('d')-6;
+            return $dStart;
+            break;
+    }
+}
+
+/**
+ * @param $data
+ * @return bool|string
+ */
+function dayStop($data){
+    switch ($data){
+        case 'Monday':
+            $dStop = date('d')+6;
+            return $dStop;
+            break;
+        case 'Tuesday':
+            $dStop = date('d')+5;
+            return $dStop;
+            break;
+        case 'Wednesday':
+            $dStop = date('d')+4;
+            return $dStop;
+            break;
+        case 'Thursday':
+            $dStop = date('d')+3;
+            return $dStop;
+            break;
+        case 'Friday':
+            $dStop = date('d')+2;
+            return $dStop;
+            break;
+        case 'Saturday':
+            $dStop = date('d')+1;
+            return $dStop;
+            break;
+        case 'Sunday':
+            $dStop = date('d');
+            return $dStop;
+            break;
+    }
+}

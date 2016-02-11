@@ -19,7 +19,12 @@ class DetailsController extends Controller {
         $order = J2storeOrder::find($order_id);
         $orderInfo = J2storeOrderInfo::find($order_id);
         $orderItems = J2storeOrderItem::where('order_id', $order_id)->get();
-        return view('pages.commandes.details', compact('order','orderInfo','orderItems'));
+        $attrib = J2storeOrderItem::where('order_id', $order_id)
+            ->having('orderitem_attribute_names', '!=', '{}')
+            ->select('orderitem_sku', 'orderitem_attribute_names')
+            ->get();
+
+            return view('pages.commandes.details', compact('order','orderInfo','orderItems', 'attrib'));
     }
 
     /**
