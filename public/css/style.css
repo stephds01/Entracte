@@ -7650,6 +7650,7 @@ label,
 
 .ent-detail-container-global .ent-detail-infoCommande .ent-detail-container li {
   list-style-type: none;
+  padding: 5px;
 }
 
 .ent-detail-container-global .ent-detail-infoCommande .ent-detail-container .ent-detail-infoCommande {

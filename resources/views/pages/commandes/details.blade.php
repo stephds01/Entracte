@@ -51,8 +51,10 @@
                             <i class="fa fa-clock-o fa-2x"></i>
                         @elseif($order->order_state_id == 2)
                             <i class="fa fa-check-square-o fa-2x"></i>
-                        @elseif($order->order_state_id == 3 || $order->order_state_id == 5)
+                        @elseif($order->order_state_id == 3)
                             <i class="fa fa-exclamation-circle fa-2x"></i>
+                        @elseif($order->order_state_id == 5)
+                            <i class="fa fa-times fa-2x"></i>
                         @endif
                     </p>
                     <form action="{{route('valid_status')}}" method="post">
