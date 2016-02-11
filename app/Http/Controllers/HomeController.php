@@ -39,6 +39,7 @@ class HomeController extends Controller {
 	public function index()
 	{
         $order = J2storeOrder::all();
+//		dd($order->toArray());
         $orderInfo = J2storeOrderInfo::all();
 		$orderItem = J2storeOrderItem::all();
 		$total = '';
