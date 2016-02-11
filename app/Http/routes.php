@@ -12,44 +12,25 @@
 */
 
 
+Route::group(['middleware' => 'auth'], function () {
+	//page Home
+	Route::get('/', 'HomeController@index');
 
-//page Home
-Route::get('/', 'HomeController@index');
-//Route::get('home', 'HomeController@index');
-////Route::get('home', 'HomeController@contact');
-
-//Historique de commandes  (page commandes / histo.blade)
-	Route::get('/historique', 'CommandesController@index');
+	//Historique de commandes  (page commandes / histo.blade)
+		Route::get('/historique', 'CommandesController@index');
 
 
-//Commandes en attente (page commandes / index.blade)
-//Route::get('/commandes', 'CommandesController@waitCom');
+	//Détails de commandes
+	Route::get('/commande/{order_id}', 'DetailsController@commande');
+	Route::post('/commande/{order_id}', ['as' => 'valid_status', 'uses' => 'DetailsController@update']);
 
+	//Statistiques
+	Route::get('/statistiques', 'StatistiquesController@index');
+	Route::post('/statistiques', 'StatistiquesController@datePicker');
 
-//Détails de commandes
-//Route::get('/details', 'DetailsController@index');
-//Route::get('/details/{order_id}', 'DetailsController@details');
-Route::get('/commande/{order_id}', 'DetailsController@commande');
-Route::post('/commande/{order_id}', ['as' => 'valid_status', 'uses' => 'DetailsController@update']);
-//Route::get('/details', 'DetailsController@index');
-//Route::get('/details/{orderitem_id}', 'DetailsController@orderDetail');
-
-//Statistiques
-Route::get('/statistiques', 'StatistiquesController@index');
-Route::post('/statistiques', 'StatistiquesController@datePicker');
-
-//Facture
-Route::get('/factures', 'FacturesController@index');
-
-
-
-
-//Ancienne route
-//Route::get('home', 'WelcomeController@index');
-//Route::get('commandes', 'OrdersController@create');
-//Route::get('commandes', 'J2storeAddressController@index');
-
-
+	//Facture
+	Route::get('/factures', 'FacturesController@index');
+});
 
 
 //Authentification
