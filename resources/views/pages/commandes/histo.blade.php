@@ -41,21 +41,21 @@
                         @foreach($orderInfo as $item)
                             <tr>
                                 <td>{{ $item->order_id }}</td>
-                                <td>{{ date('H:i:s d/m/Y',strtotime($item->order->created_date ))}}</td>
+                                <td>{{ date('H:i:s d/m/Y',strtotime($item->created_date ))}}</td>
                                 <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
                                 <td>{{ $item->billing_address_1 }}<br>
                                     {{ $item->billing_zip }}<br>
                                     {{ $item->billing_city }}
                                 </td>
-                                <td>{{ floatval($item->order->order_total)}} €</td>
+                                <td>{{ floatval($item->order_total)}} €</td>
                                 <td>
-                                    @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
+                                    @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                         <i class="fa fa-clock-o fa-2x"></i>
-                                    @elseif($item->order->order_state_id == 2)
+                                    @elseif($item->order_state_id == 2)
                                         <i class="fa fa-check-square-o fa-2x"></i>
-                                    @elseif($item->order->order_state_id == 5)
+                                    @elseif($item->order_state_id == 3)
                                         <i class="fa fa-exclamation-circle fa-2x"></i>
-                                    @elseif($item->order->order_state_id == 3)
+                                    @elseif($item->order_state_id == 5)
                                         <i class="fa fa-times fa-2x"></i>
                                     @endif
                                 </td>
@@ -96,24 +96,24 @@
                         </tr>
 
                         @foreach($orderInfo as $item)
-                            @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
+                            @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                 <tr>
                                     <td>{{ $item->order_id }}</td>
-                                    <td>{{ date('H:i:s d/m/Y',strtotime($item->order->created_date ))}}</td>
+                                    <td>{{ date('H:i:s d/m/Y',strtotime($item->created_date ))}}</td>
                                     <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
                                     <td>{{ $item->billing_address_1 }}<br>
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ floatval($item->order->order_total)}} €</td>
+                                    <td>{{ floatval($item->order_total)}} €</td>
                                     <td>
-                                        @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
+                                        @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 2)
+                                        @elseif($item->order_state_id == 2)
                                             <i class="fa fa-check-square-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 5)
+                                        @elseif($item->order_state_id == 3)
                                             <i class="fa fa-exclamation-circle fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 3)
+                                        @elseif($item->order_state_id == 5)
                                             <i class="fa fa-times fa-2x"></i>
                                         @endif
                                     </td>
@@ -154,24 +154,24 @@
                         </tr>
 
                         @foreach($orderInfo as $item)
-                            @if($item->order->order_state_id == 2)
+                            @if($item->order_state_id == 2)
                                 <tr>
                                     <td>{{ $item->order_id }}</td>
-                                    <td>{{ date('H:i:s d/m/Y',strtotime($item->order->created_date ))}}</td>
+                                    <td>{{ date('H:i:s d/m/Y',strtotime($item->created_date ))}}</td>
                                     <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
                                     <td>{{ $item->billing_address_1 }}<br>
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ floatval($item->order->order_total)}} €</td>
+                                    <td>{{ floatval($item->order_total)}} €</td>
                                     <td>
-                                        @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
+                                        @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 2)
+                                        @elseif($item->order_state_id == 2)
                                             <i class="fa fa-check-square-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 5)
+                                        @elseif($item->order_state_id == 3)
                                             <i class="fa fa-exclamation-circle fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 3)
+                                        @elseif($item->order_state_id == 5)
                                             <i class="fa fa-times fa-2x"></i>
                                         @endif
                                     </td>
@@ -183,7 +183,7 @@
                                 </tr>
                             @endif
                         @endforeach
-                        @if(is_null($confirm))
+                        @if($confirm == 0)
                             <tr>
                                 <td colspan="9">Aucune commande livrée</td>
                             </tr>
@@ -211,24 +211,24 @@
                         </tr>
 
                         @foreach($orderInfo as $item)
-                            @if($item->order->order_state_id == 3 || $item->order->order_state_id == 5)
+                            @if($item->order_state_id == 3 || $item->order_state_id == 5)
                                 <tr>
                                     <td>{{ $item->order_id }}</td>
-                                    <td>{{ date('H:i:s d/m/Y',strtotime($item->order->created_date ))}}</td>
+                                    <td>{{ date('H:i:s d/m/Y',strtotime($item->created_date ))}}</td>
                                     <td>{{ $item->billing_last_name }} {{ $item->billing_first_name }}</td>
                                     <td>{{ $item->billing_address_1 }}<br>
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ floatval($item->order->order_total)}} €</td>
+                                    <td>{{ floatval($item->order_total)}} €</td>
                                     <td>
-                                        @if($item->order->order_state_id == 1 || $item->order->order_state_id == 4)
+                                        @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 2)
+                                        @elseif($item->order_state_id == 2)
                                             <i class="fa fa-check-square-o fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 5)
+                                        @elseif($item->order_state_id == 3)
                                             <i class="fa fa-exclamation-circle fa-2x"></i>
-                                        @elseif($item->order->order_state_id == 3)
+                                        @elseif($item->order_state_id == 5)
                                             <i class="fa fa-times fa-2x"></i>
                                         @endif
                                     </td>

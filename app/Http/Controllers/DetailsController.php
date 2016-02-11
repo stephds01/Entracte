@@ -21,10 +21,11 @@ class DetailsController extends Controller {
         $orderItems = J2storeOrderItem::where('order_id', $order_id)->get();
         $attrib = J2storeOrderItem::where('order_id', $order_id)
             ->having('orderitem_attribute_names', '!=', '{}')
-            ->select('orderitem_sku', 'orderitem_attribute_names')
+            ->select('orderitem_id', 'orderitem_attribute_names')
             ->get();
+//        dd($attrib->toArray());
 
-            return view('pages.commandes.details', compact('order','orderInfo','orderItems', 'attrib'));
+            return view('pages.commandes.details', compact('order','orderInfo','orderItems','reduc', 'attrib'));
     }
 
     /**
