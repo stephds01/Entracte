@@ -39,7 +39,10 @@ class HomeController extends Controller {
 	{
         $order = J2storeOrder::all();
         $total = floatval(J2storeOrder::isValid()->sum('order_total'));
-        $orderInfo = J2storeOrderInfo::all();
+		$orderInfo = J2storeOrderInfo::join('u16w2_j2store_orders', function($q){
+			$q->on('u16w2_j2store_orderinfo.order_id', '=', 'u16w2_j2store_orders.order_id');
+		})->orderBy('created_date', 'desc')
+			->get();
 
 		return view('home', compact('orderInfo', 'order', 'total'));
 

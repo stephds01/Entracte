@@ -30,7 +30,7 @@
                     </p>
                 @endif
                     <ul>
-                        <li>Liquide : <span>{{$dCash}} €</span></li>
+                        <li>Espèces : <span>{{$dCash}} €</span></li>
                         <li>Chèques : <span>{{$dMoneyorder}} €</span></li>
                         <li>Paypal : <span>{{$dPaypal}} €</span></li>
                         <li class="total alert-success">Total : <span>{{floatval($dTotal->sum('order_total'))}} €</span></li>
@@ -63,7 +63,7 @@
                     </p>
                 @endif
                 <ul>
-                    <li>Liquide : <span>{{$wCash}} €</span></li>
+                    <li>Espèces : <span>{{$wCash}} €</span></li>
                     <li>Chèques : <span>{{$wMoneyorder}} €</span></li>
                     <li>Paypal : <span>{{$wPaypal}} €</span></li>
                     <li class="total alert-success">Total : <span>{{floatval($wTotal->sum('order_total'))}} €</span></li>
@@ -90,7 +90,7 @@
                     </p>
                 @endif
                     <ul>
-                        <li>Liquide : <span>{{$mCash}} €</span></li>
+                        <li>Espèces : <span>{{$mCash}} €</span></li>
                         <li>Chèques : <span>{{$mMoneyorder}} €</span></li>
                         <li>Paypal : <span>{{$mPaypal}} €</span></li>
                         <li class="total alert-success">Total : <span>{{floatval($mTotal->sum('order_total'))}} €</span></li>
@@ -126,7 +126,7 @@
                     </p>
                 @endif
                     <ul>
-                        <li>Liquide : <span>{{$yCash}} €</span></li>
+                        <li>Espèces : <span>{{$yCash}} €</span></li>
                         <li>Chèques : <span>{{$yMoneyorder}} €</span></li>
                         <li>Paypal : <span>{{$yPaypal}} €</span></li>
                         <li class="total alert-success">Total : <span>{{floatval($yTotal->sum('order_total'))}} €</span></li>
