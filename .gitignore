@@ -1,5 +1,6 @@
+/public/css/sass
+prepros.cfg
 /vendor
 /node_modules
 .env
 .idea
-css/sass

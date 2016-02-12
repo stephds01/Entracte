@@ -2,26 +2,20 @@
 @import "sass/base/reset";
 @import "sass/base/bootstrap";
 @import "sass/base/variables";
-
-
-
-
+@import "jquery-ui.min";
+@import "jquery-ui.theme.min";
+@import "week-picker-view";
+@import "../bower_components/font-awesome/scss/font-awesome";
 
 /*
 |--------------------------------------------------------------------------
 | Components
 |--------------------------------------------------------------------------
 */
-
 @import "sass/components/header";
 @import "sass/components/footer";
 @import "sass/components/menu";
 @import "sass/components/bandeauTitre";
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Layouts
@@ -29,15 +23,6 @@
 */
 @import "sass/layout/home";
 @import "sass/layout/detail";
-@import "sass/layout/statistique";
 @import "sass/layout/commande";
 @import "sass/layout/stats";
-
-
-/*
-|--------------------------------------------------------------------------
-| Layouts
-|--------------------------------------------------------------------------
-*/
-
 @import "sass/auth/login";

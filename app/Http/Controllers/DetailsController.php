@@ -23,10 +23,8 @@ class DetailsController extends Controller {
             ->having('orderitem_attribute_names', '!=', '{}')
             ->select('orderitem_id', 'orderitem_attribute_names')
             ->get();
-//        dd($attrib->toArray());
         $timezone = 1;
-
-            return view('pages.commandes.details', compact('order','orderInfo','orderItems','reduc', 'attrib', 'timezone'));
+         return view('pages.commandes.details', compact('order','orderInfo','orderItems','reduc', 'attrib', 'timezone'));
     }
 
     /**
@@ -38,21 +36,11 @@ class DetailsController extends Controller {
         if(isset($request)){
             $order = J2storeOrder::find($request->order_id);
             $order->order_state = $request->order_state;
-            if($request->order_state === 'stay'){
-                $order->order_state_id = 1;
-            }
-            else if($request->order_state === 'confirm'){
-                $order->order_state_id = 2;
-            }
-            else if($request->order_state === 'stop'){
-                $order->order_state_id = 3;
-            }
-
+            if($request->order_state === 'stay'){ $order->order_state_id = 1; }
+            else if($request->order_state === 'confirm'){ $order->order_state_id = 2;  $order->transaction_status = 'Validé'; }
+            else if($request->order_state === 'stop'){ $order->order_state_id = 3; $order->transaction_status = 'Annulé'; }
             $order->save();
         }
-
-//        return view()->action('HomeController@index');
-            return redirect()->back();
+        return redirect()->back();
     }
-
 }
