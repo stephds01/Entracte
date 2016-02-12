@@ -13,27 +13,13 @@
 
 
 Route::group(['middleware' => 'auth'], function () {
-	//page Home
 	Route::get('/', 'HomeController@index');
-
-	//Historique de commandes  (page commandes / histo.blade)
-		Route::get('/historique', 'CommandesController@index');
-
-
-	//Détails de commandes
+	Route::get('/historique', 'CommandesController@index');
 	Route::get('/commande/{order_id}', 'DetailsController@commande');
 	Route::post('/commande/{order_id}', ['as' => 'valid_status', 'uses' => 'DetailsController@update']);
-
-	//Statistiques
 	Route::get('/statistiques', 'StatistiquesController@index');
 	Route::post('/statistiques', 'StatistiquesController@datePicker');
-
-	//Facture
-	Route::get('/factures', 'FacturesController@index');
 });
-
-
-//Authentification
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

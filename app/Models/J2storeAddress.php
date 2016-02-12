@@ -6,20 +6,7 @@ class J2storeAddress extends Model {
 
     protected $connection = 'mysql2';
     protected $table = 'u16w2_j2store_address';
-
-
-    protected $fillable = [
-        'id',
-        'first_name',
-        'last_name',
-        'email',
-        'adress_1',
-        'adress_2',
-        'city',
-        'zip',
-        'phone_1',
-        'type',
-    ];
+    protected $fillable = ['id','first_name','last_name','email','adress_1','adress_2','city','zip','phone_1','type',];
 
 
     public function J2storeAddress()
