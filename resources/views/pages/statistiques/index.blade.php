@@ -30,12 +30,12 @@
                     </p>
                 @endif
                     <ul>
-                        <li>Espèces : <span>{{$dCash}} €</span></li>
-                        <li>Chèques : <span>{{$dMoneyorder}} €</span></li>
-                        <li>Paypal : <span>{{$dPaypal}} €</span></li>
-                        <li class="total alert-success">Total : <span>{{floatval($dTotal->sum('order_total'))}} €</span></li>
-                        <li class="alert-danger">Paiement non finalisé : <span>{{floatval($dAbort->sum('order_total'))}} €</span></li>
-                        <li class="alert-danger">Commande annulée : <span>{{floatval($dNul->sum('order_total'))}} €</span></li>
+                        <li>Espèces : <span>{{number_format($dCash, 2)}} €</span></li>
+                        <li>Chèques : <span>{{number_format($dMoneyorder, 2)}} €</span></li>
+                        <li>Paypal : <span>{{number_format($dPaypal, 2)}} €</span></li>
+                        <li class="total alert-success">Total : <span>{{number_format(floatval($dTotal->sum('order_total')),2)}} €</span></li>
+                        <li class="alert-danger">Paiement non finalisé : <span>{{number_format(floatval($dAbort->sum('order_total')),2)}} €</span></li>
+                        <li class="alert-danger">Commande annulée : <span>{{number_format(floatval($dNul->sum('order_total')),2)}} €</span></li>
                         <li class="total">Nombre de commandes : <span>{{intval($dTotal->count())}}</span></li>
                     </ul>
             </article>
@@ -63,12 +63,12 @@
                     </p>
                 @endif
                 <ul>
-                    <li>Espèces : <span>{{$wCash}} €</span></li>
-                    <li>Chèques : <span>{{$wMoneyorder}} €</span></li>
-                    <li>Paypal : <span>{{$wPaypal}} €</span></li>
-                    <li class="total alert-success">Total : <span>{{floatval($wTotal->sum('order_total'))}} €</span></li>
-                    <li class="alert-danger">Paiement non finalisé : <span>{{floatval($wAbort->sum('order_total'))}} €</span></li>
-                    <li class="alert-danger">Commande annulée : <span>{{floatval($wNul->sum('order_total'))}} €</span></li>
+                    <li>Espèces : <span>{{number_format($wCash,2)}} €</span></li>
+                    <li>Chèques : <span>{{number_format($wMoneyorder,2)}} €</span></li>
+                    <li>Paypal : <span>{{number_format($wPaypal,2)}} €</span></li>
+                    <li class="total alert-success">Total : <span>{{number_format(floatval($wTotal->sum('order_total')),2)}} €</span></li>
+                    <li class="alert-danger">Paiement non finalisé : <span>{{number_format(floatval($wAbort->sum('order_total')),2)}} €</span></li>
+                    <li class="alert-danger">Commande annulée : <span>{{number_format(floatval($wNul->sum('order_total')),2)}} €</span></li>
                     <li class="total">Nombre de commandes : <span>{{intval($wTotal->count())}}</span></li>
                 </ul>
             </article>
@@ -90,12 +90,12 @@
                     </p>
                 @endif
                     <ul>
-                        <li>Espèces : <span>{{$mCash}} €</span></li>
-                        <li>Chèques : <span>{{$mMoneyorder}} €</span></li>
-                        <li>Paypal : <span>{{$mPaypal}} €</span></li>
-                        <li class="total alert-success">Total : <span>{{floatval($mTotal->sum('order_total'))}} €</span></li>
-                        <li class="alert-danger">Paiement non finalisé : <span>{{floatval($mAbort->sum('order_total'))}} €</span></li>
-                        <li class="alert-danger">Commande annulée : <span>{{floatval($mNul->sum('order_total'))}} €</span></li>
+                        <li>Espèces : <span>{{number_format($mCash,2)}} €</span></li>
+                        <li>Chèques : <span>{{number_format($mMoneyorder,2)}} €</span></li>
+                        <li>Paypal : <span>{{number_format($mPaypal,2)}} €</span></li>
+                        <li class="total alert-success">Total : <span>{{number_format(floatval($mTotal->sum('order_total')),2)}} €</span></li>
+                        <li class="alert-danger">Paiement non finalisé : <span>{{number_format(floatval($mAbort->sum('order_total')),2)}} €</span></li>
+                        <li class="alert-danger">Commande annulée : <span>{{number_format(floatval($mNul->sum('order_total')),2)}} €</span></li>
                         <li class="total">Nombre de commandes : <span>{{intval($mTotal->count())}}</span></li>
                     </ul>
             </article>
@@ -126,12 +126,12 @@
                     </p>
                 @endif
                     <ul>
-                        <li>Espèces : <span>{{$yCash}} €</span></li>
-                        <li>Chèques : <span>{{$yMoneyorder}} €</span></li>
-                        <li>Paypal : <span>{{$yPaypal}} €</span></li>
-                        <li class="total alert-success">Total : <span>{{floatval($yTotal->sum('order_total'))}} €</span></li>
-                        <li class="alert-danger">Paiement non finalisé : <span>{{floatval($yAbort->sum('order_total'))}} €</span></li>
-                        <li class="alert-danger">Commande annulée : <span>{{floatval($yNul->sum('order_total'))}} €</span></li>
+                        <li>Espèces : <span>{{number_format($yCash,2)}} €</span></li>
+                        <li>Chèques : <span>{{number_format($yMoneyorder,2)}} €</span></li>
+                        <li>Paypal : <span>{{number_format($yPaypal,2)}} €</span></li>
+                        <li class="total alert-success">Total : <span>{{number_format(floatval($yTotal->sum('order_total')),2)}} €</span></li>
+                        <li class="alert-danger">Paiement non finalisé : <span>{{number_format(floatval($yAbort->sum('order_total')),2)}} €</span></li>
+                        <li class="alert-danger">Commande annulée : <span>{{number_format(floatval($yNul->sum('order_total')),2)}} €</span></li>
                         <li class="total">Nombre de commandes : <span>{{intval($yTotal->count())}}</span></li>
                     </ul>
             </article>
