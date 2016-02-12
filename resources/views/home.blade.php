@@ -14,25 +14,25 @@
                 </div>
                 <div>
                     <p>
-                        <span class="text-info">{{count($order->where('order_state_id', 1))+count($order->where('order_state_id', 4))}}</span>
+                        <span class="text-info">{{$stay}}</span>
                         commandes en cours
                     </p>
                 </div>
                 <div>
                     <p>
-                        <span  class="text-info">{{count($order->where('order_state_id', 2))}}</span>
+                        <span  class="text-info">{{$confirm}}</span>
                         commandes livrées
                     </p>
                 </div>
                 <div>
                     <p>
-                        <span  class="text-danger">{{count($order->where('order_state_id', 3))+count($order->where('order_state_id', 5))}}</span>
+                        <span  class="text-danger">{{$stop}}</span>
                         commandes annulées
                     </p>
                 </div>
                 <div>
                     <p>Total CA :
-                        <span class="text-success">{{$total}} €</span>
+                        <span class="text-success">{{number_format($total, 2)}} €</span>
                     </p>
                 </div>
             </article>
@@ -66,7 +66,7 @@
                                 {{ $item->billing_zip }}<br>
                                 {{ $item->billing_city }}
                             </td>
-                            <td>{{ floatval($item->order_total)}} €</td>
+                            <td>{{ number_format(floatval($item->order_total), 2)}} €</td>
                             <td><i class="fa fa-clock-o fa-2x"></i></td>
                             <td><a href="{{ URL::to( '/commande') }}/{{ $item->order_id }}">
                                     <i class="fa fa-plus fa-2x"></i></a>
