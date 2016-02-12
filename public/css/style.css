@@ -12418,28 +12418,32 @@ label,
 }
 
 .ent-detail-container-global .ent-detail-infoCommande .ent-detail-container .ent-detail-infoCommande {
-  border: 1px solid white;
+  box-shadow: 0 0 5px #fff;
+  border-radius: 5px;
   width: 49%;
   margin-bottom: 20px;
   padding: 10px 20px;
 }
 
 .ent-detail-container-global .ent-detail-infoCommande .ent-detail-container .ent-detail-informationClient {
-  border: 1px solid white;
+  box-shadow: 0 0 5px #fff;
+  border-radius: 5px;
   width: 49%;
   margin-bottom: 20px;
   padding: 10px 20px;
 }
 
 .ent-detail-container-global .ent-detail-infoCommande .ent-detail-container .ent-detail-infoPaiement {
-  border: 1px solid white;
+  box-shadow: 0 0 5px #fff;
+  border-radius: 5px;
   width: 49%;
   margin-bottom: 50px;
   padding: 10px 20px;
 }
 
 .ent-detail-container-global .ent-detail-infoCommande .ent-detail-container .ent-detail-infoStatut {
-  border: 1px solid white;
+  box-shadow: 0 0 5px #fff;
+  border-radius: 5px;
   width: 49%;
   margin-bottom: 50px;
   padding: 10px 20px;
@@ -12462,8 +12466,10 @@ label,
 
 .ent-detail-container-global .ent-detail-detailCommande {
   margin: 0 auto;
-  border: 1px solid white;
+  box-shadow: 0 0 5px #fff;
+  border-radius: 5px;
   width: 90%;
+  padding: 10px 20px;
 }
 
 .ent-detail-container-global .ent-detail-detailCommande table {
