@@ -8,6 +8,8 @@ use App\Http\Requests\Request;
  * @property mixed monthYearPicker
  * @property mixed check
  * @property mixed year
+ * @property mixed month
+ * @property mixed yYear
  */
 class StatRequest extends Request {
 

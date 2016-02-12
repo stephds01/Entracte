@@ -85,7 +85,6 @@ function getDay($date){
     $day = explode(' ', $create[2]);
     return intval($day[0]);
 }
-
 /**
  * @param $date
  * @return string
@@ -100,8 +99,6 @@ function takeDate($date){
     return $data;
 
 }
-
-
 /**
  * @param $data
  * @return bool|string
@@ -109,14 +106,13 @@ function takeDate($date){
 function paiement($data){
     switch ($data){
         case 'payment_cash':
-            return 'Paiement espèces ou ticket restaurant ';
+            return 'Espèces / Tickets Restaurant ';
             break;
         case 'payment_moneyorder':
-            return 'Paiement chèque';
+            return 'Chèque';
             break;
         case 'payment_paypal':
-            return 'Paiement Paypal';
+            return 'Paypal';
             break;
     }
-
 }

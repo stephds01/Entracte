@@ -77,7 +77,7 @@
         <section>
             <h2>Mois :
                 {!! Form::open(array('post' => 'StatistiquesController@datePicker')) !!}
-                    <input type="text" name="monthYearPicker" id="monthYearPicker" placeholder="{{dateConvert(date('F'))}} {{date('Y')}}">
+                    <input type="text" name="monthYearPicker" id="monthYearPicker" placeholder="{{dateConvert(date('F',strtotime($year.'-'.$month.'-'.'01')))}} {{$year}}">
                     <button class="btn btn-primary" type="submit" name="check" value="checkMonth">
                         <i class="fa fa-check"></i>
                     </button>
