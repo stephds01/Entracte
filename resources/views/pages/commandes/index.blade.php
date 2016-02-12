@@ -47,7 +47,7 @@
                                     {{ $item->billing_zip }}<br>
                                     {{ $item->billing_city }}
                                 </td>
-                                <td>{{ floatval($item->order_total)}} €</td>
+                                <td>{{ number_format(floatval($item->order_total),2)}} €</td>
                                 <td>
                                     @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                         <i class="fa fa-clock-o fa-2x"></i>
@@ -66,7 +66,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                        @if(is_null(count($order)))
+                        @if(count($order)==0)
                             <tr>
                                 <td colspan="9">Aucune commande</td>
                             </tr>
@@ -105,7 +105,7 @@
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ floatval($item->order_total)}} €</td>
+                                    <td>{{ number_format(floatval($item->order_total),2)}} €</td>
                                     <td>
                                         @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
@@ -125,7 +125,7 @@
                                 </tr>
                             @endif
                         @endforeach
-                        @if(is_null($wait))
+                        @if($wait==0)
                             <tr>
                                 <td colspan="9">Aucune commande en attente</td>
                             </tr>
@@ -163,7 +163,7 @@
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ floatval($item->order_total)}} €</td>
+                                    <td>{{ number_format(floatval($item->order_total),2)}} €</td>
                                     <td>
                                         @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
@@ -220,7 +220,7 @@
                                         {{ $item->billing_zip }}<br>
                                         {{ $item->billing_city }}
                                     </td>
-                                    <td>{{ floatval($item->order_total)}} €</td>
+                                    <td>{{ number_format(floatval($item->order_total),2)}} €</td>
                                     <td>
                                         @if($item->order_state_id == 1 || $item->order_state_id == 4)
                                             <i class="fa fa-clock-o fa-2x"></i>
@@ -240,7 +240,7 @@
                                 </tr>
                             @endif
                         @endforeach
-                        @if(is_null($stop))
+                        @if($stop==0)
                             <tr>
                                 <td colspan="9">Aucune commande annulée</td>
                             </tr>

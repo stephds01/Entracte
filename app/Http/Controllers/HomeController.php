@@ -21,11 +21,15 @@ class HomeController extends Controller {
 	{
 		$timezone = 1;
         $order = J2storeOrder::all();
+		$stay = J2storeOrder::whereIn('order_state_id', [1,4])->get()->count();
+		$stop = J2storeOrder::isAbort()->count();
+		$confirm = J2storeOrder::where('order_state_id', 2)->get()->count();
         $total = floatval(J2storeOrder::isValid()->sum('order_total'));
 		$orderInfo = J2storeOrderInfo::join('u16w2_j2store_orders', function($q){
 			$q->on('u16w2_j2store_orderinfo.order_id', '=', 'u16w2_j2store_orders.order_id');
 		})->orderBy('created_date', 'desc')
 			->get();
-		return view('home', compact('orderInfo', 'order', 'total', 'timezone'));
+
+		return view('home', compact('orderInfo', 'order', 'total', 'timezone', 'stay', 'stop','confirm' ));
 	}
 }

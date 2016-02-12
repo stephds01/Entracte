@@ -20,7 +20,7 @@
                     <ul class="list-group text-primary">
                         <li class="list-group-item">ID commande : <strong>{{ $order->order_id }}</strong></li>
                         <li class="list-group-item">Facture N° : <strong>{{ $order->order_id }}</strong></li>
-                        <li class="list-group-item">Montant : <strong>{{ $order->order_total }}</strong></li>
+                        <li class="list-group-item">Montant : <strong>{{ number_format(floatval($order->order_total),2)}} €</strong></li>
                         <li class="list-group-item">Date : <strong>{{ date('d/m/Y H:i:s',strtotime($order->created_date)+3600*($timezone+date("I")))}}</strong></li>
                     </ul>
                 </div>
@@ -114,9 +114,9 @@
                                     @endforeach
                             @endforeach
                         </td>
-                        <td><strong>{{ floatval($item->orderitem_price) }} €</strong></td>
+                        <td><strong>{{ number_format(floatval($item->orderitem_price),2) }} €</strong></td>
                         <td><strong>{{ $item->orderitem_quantity }}</strong></td>
-                        <td><strong>{{ floatval($item->orderitem_final_price) }} €</strong></td>
+                        <td><strong>{{ number_format(floatval($item->orderitem_final_price),2) }} €</strong></td>
 
                 </tr>
                 @endforeach
@@ -126,15 +126,15 @@
                 <tr class="alert-info">
 
                 <td colspan="5" class="right">Sous-total</td>
-                    <td><strong>{{ floatval($order->order_subtotal)}} €</strong></td>
+                    <td><strong>{{ number_format(floatval($order->order_subtotal),2)}} €</strong></td>
                 </tr>
                 <tr class="alert-info">
                     <td colspan="5" class="right">Réduction</td>
-                    <td><strong>{{ floatval($order->order_discount)}} €</strong></td>
+                    <td><strong>{{ number_format(floatval($order->order_discount),2)}} €</strong></td>
                 </tr>
                 <tr class="alert-info">
                     <td colspan="5" class="right">Total</td>
-                    <td><strong>{{ floatval($order->order_total) }} €</strong></td>
+                    <td><strong>{{ number_format(floatval($order->order_total),2) }} €</strong></td>
                 </tr>
             </table>
         </section>
