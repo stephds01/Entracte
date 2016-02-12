@@ -14,19 +14,19 @@
                 </div>
                 <div>
                     <p>
-                        <span class="text-info">{{count($order->where('order_state_id', '1'))+count($order->where('order_state_id', '4'))}}</span>
+                        <span class="text-info">{{count($order->where('order_state_id', 1))+count($order->where('order_state_id', 4))}}</span>
                         commandes en cours
                     </p>
                 </div>
                 <div>
                     <p>
-                        <span  class="text-info">{{count($order->where('order_state_id', '2'))}}</span>
+                        <span  class="text-info">{{count($order->where('order_state_id', 2))}}</span>
                         commandes livrées
                     </p>
                 </div>
                 <div>
                     <p>
-                        <span  class="text-danger">{{count($order->where('order_state_id', '3'))+count($order->where('order_state_id', '5'))}}</span>
+                        <span  class="text-danger">{{count($order->where('order_state_id', 3))+count($order->where('order_state_id', 5))}}</span>
                         commandes annulées
                     </p>
                 </div>
