@@ -34,7 +34,11 @@
                         <li class="list-group-item">E-mail : <strong>{{ $orderInfo->user_email }}</strong></li>
                         <li class="alert-info">
                             <i class="fa fa-2x fa-pencil-square-o"></i>
-                            <span class="">{{ $order->customer_note }}</span>
+                            @if(empty($order->customer_note))
+                                <span>Aucun commentaire</span>
+                            @else
+                                <span>{{ $order->customer_note }}</span>
+                            @endif
                         </li>
                     </ul>
 
