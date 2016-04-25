@@ -12,10 +12,14 @@
 */
 
 
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/', 'HomeController@index');
+	Route::post('/', 'HomeController@datePicker');
 	Route::get('/historique', 'CommandesController@index');
 	Route::get('/commande/{order_id}', 'DetailsController@commande');
+	Route::get('/facture/{order_id}', 'DetailsController@facture');
+	Route::post('/facture/{order_id}', 'DetailsController@maj');
 	Route::post('/commande/{order_id}', ['as' => 'valid_status', 'uses' => 'DetailsController@update']);
 	Route::get('/statistiques', 'StatistiquesController@index');
 	Route::post('/statistiques', 'StatistiquesController@datePicker');

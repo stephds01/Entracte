@@ -7,7 +7,13 @@
   background-color: #069AC8;
   -webkit-background-size: cover;
   background-size: cover;
-  margin: 0 auto 80px;
+  margin: -20px auto 0;
+  padding: 20px 0 80px;
+  min-height: 100vh;
+
+  #refresh_page {
+    margin-top: -8px;
+  }
 
   .home-stats {
     margin: 0 auto;
@@ -54,6 +60,19 @@
   tr{
     border: 2px solid #069AC8;
     height: 50px;
+    
+    &.status {
+      background-color: #f9690e;
+      cursor: pointer;
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    &.validate {
+      background-color: #ffffff;
+    }
+
   }
 
   th{
@@ -67,8 +86,8 @@
   }
 
   td{
-    font-size:  12px;
-    background-color: white;
+    font-size:  20px;
+    //background-color: white;
     text-align: center;
 
   }
@@ -99,22 +118,18 @@
 .fa-file-pdf-o{
   color: red;
 }
+
 .ent-home-footer{
   background-color: #f4f4f4;
   width:  90%;
 
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-
   margin-left: 5%;
-  padding:  10px;
 
-  div{
-    padding-left: 20px;
-    font-size:  11px;
+  .session, form {
+    width: 49%;
+    display: inline-block;
+    vertical-align: middle;
+    padding:  10px;
+    text-align: right;
   }
-
-
-
 }

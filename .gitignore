@@ -1,3 +1,5 @@
+/app/Http/Controllers/CommandesController.php
+/resources/views/pages/commandes/index.blade.php
 /public/css/sass
 prepros.cfg
 /vendor

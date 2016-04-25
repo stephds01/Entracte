@@ -3,10 +3,10 @@
 
 @section('content')
     @include('pages.components.header')
-    @include('pages.components.menu')
 
 
     <div class="ent-detail-container-global">
+        @include('pages.components.menu')
         <div class="ent-bandeauTitre-container">
             <ul class="ent-bandeauTitre-titre"><li>Détails de la commande</li></ul>
         </div>
