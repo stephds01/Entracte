@@ -27,11 +27,5 @@ $(document).ready(function(){
     $('#refresh_page').on('click', function(){
         location.reload();
     });
-
-    if($('#autorefresh_page')){
-        setTimeout(function(){
-            location.reload(true);
-        }, 20000)
-    }
 });
 

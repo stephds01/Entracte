@@ -1,9 +1,12 @@
+@section('meta')
+    <meta http-equiv="refresh" content="60">
+@stop
 @extends('app')
 @section('content')
     @include('pages.components.header')
 
 
-    <section class="ent-home-container-global" id="autorefresh_page">
+    <section class="ent-home-container-global">
         @include('pages.components.menu')
         <div class="ent-bandeauTitre-container">
             <ul class="ent-bandeauTitre-titre">
