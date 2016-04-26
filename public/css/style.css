@@ -12687,7 +12687,7 @@ label,
 }
 
 @media print {
-  #print {
+  #print, #back {
     display: none;
   }
   .ent-print-container-global {
