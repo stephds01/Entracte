@@ -4,6 +4,9 @@
 @section('content')
 
     <button id="print" type="submit" class="pull-right btn btn-success btn-lg" onclick="window.print();return false">Imprimer</button>
+    <a href="javascript:history.back()" class="btn btn-primary pull-left" id="back">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+    </a>
 
     <div class="ent-print-container-global">
         <header>
