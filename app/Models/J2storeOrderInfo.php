@@ -16,4 +16,25 @@ class J2storeOrderInfo extends Model
     {
         return $this->belongsTo('App\Models\J2storeOrder');
     }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeisValid($query)
+    {
+        return $query->whereIn('order_state_id', [1, 2, 4]);
+    }
+
+
+    /**
+     * @param $query
+     * @param $src
+     * @param $search
+     * @return mixed
+     */
+    public function scopegetBetweenData($query, $src, $search){
+        return $query->whereBetween($src, [$search]) ->get();
+    }
+
 }

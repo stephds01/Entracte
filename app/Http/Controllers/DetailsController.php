@@ -8,6 +8,7 @@ use App\Models\J2storeOrder;
 use App\Models\J2storeOrderInfo;
 use App\Models\J2storeOrderItem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class DetailsController extends Controller {
 
@@ -42,5 +43,49 @@ class DetailsController extends Controller {
             $order->save();
         }
         return redirect()->back();
+    }
+
+    /**
+     * @param $order_id
+     * @return \Illuminate\View\View
+     */
+    public function facture($order_id){
+        $order = J2storeOrder::find($order_id);
+        /*maj du status */
+        if(($order->order_state_id == 1) || ($order->order_state_id == 4)){
+            $order->order_state_id = 2;
+            $order->order_state = 'confirm';
+            $order->transaction_status = 'Validé';
+            $order->save();
+        }
+        $orderInfo = J2storeOrderInfo::find($order_id);
+        $orderItems = J2storeOrderItem::where('order_id', $order_id)->get();
+        $attrib = J2storeOrderItem::where('order_id', $order_id)
+            ->having('orderitem_attribute_names', '!=', '{}')
+            ->select('orderitem_id', 'orderitem_attribute_names')
+            ->get();
+        $timezone = 1;
+
+        /*envoi mail au user_mail*/
+        $usermail = $order->user_email;
+//        $hourC = date('H:i',strtotime($order->created_date )+3600*($timezone+date("I")));
+//        $hourL = date('H:i',strtotime($order->created_date )+6000*($timezone+date("I")));
+//        $usename = $order->billing_first_name;
+
+        Mail::send(['emails.commande', 'emails.commande-text'], [
+            'order'=>$order,
+            'orderInfo'=>$orderInfo,
+            'orderItems'=>$orderItems,
+            'attrib'=>$attrib,
+            'timezone'=>$timezone
+        ], function($message) use ($usermail){
+            $message
+                ->to($usermail)
+                ->from('local_test@g.com')
+                ->subject('Restaurant l\'entracte : votre commande est prise en compte');
+        });
+
+
+        return view('pages.commandes.print', compact('order','orderInfo','orderItems','reduc', 'attrib', 'timezone'));
     }
 }

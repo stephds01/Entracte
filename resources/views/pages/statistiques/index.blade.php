@@ -5,10 +5,10 @@
 @section('content')
 
     @include('pages.components.header')
-    @include('pages.components.menu')
 
 
     <div class="ent-statistique-container-global">
+        @include('pages.components.menu')
         <div class="ent-bandeauTitre-container">
             <ul class="ent-bandeauTitre-titre"><li>Statistiques</li></ul>
         </div>
@@ -31,7 +31,6 @@
                 @endif
                     <ul>
                         <li>Espèces : <span>{{number_format($dCash, 2)}} €</span></li>
-                        <li>Chèques : <span>{{number_format($dMoneyorder, 2)}} €</span></li>
                         <li>Paypal : <span>{{number_format($dPaypal, 2)}} €</span></li>
                         <li class="total alert-success">Total : <span>{{number_format(floatval($dTotal->sum('order_total')),2)}} €</span></li>
                         <li class="alert-danger">Paiement non finalisé : <span>{{number_format(floatval($dAbort->sum('order_total')),2)}} €</span></li>
@@ -64,7 +63,6 @@
                 @endif
                 <ul>
                     <li>Espèces : <span>{{number_format($wCash,2)}} €</span></li>
-                    <li>Chèques : <span>{{number_format($wMoneyorder,2)}} €</span></li>
                     <li>Paypal : <span>{{number_format($wPaypal,2)}} €</span></li>
                     <li class="total alert-success">Total : <span>{{number_format(floatval($wTotal->sum('order_total')),2)}} €</span></li>
                     <li class="alert-danger">Paiement non finalisé : <span>{{number_format(floatval($wAbort->sum('order_total')),2)}} €</span></li>
@@ -91,7 +89,6 @@
                 @endif
                     <ul>
                         <li>Espèces : <span>{{number_format($mCash,2)}} €</span></li>
-                        <li>Chèques : <span>{{number_format($mMoneyorder,2)}} €</span></li>
                         <li>Paypal : <span>{{number_format($mPaypal,2)}} €</span></li>
                         <li class="total alert-success">Total : <span>{{number_format(floatval($mTotal->sum('order_total')),2)}} €</span></li>
                         <li class="alert-danger">Paiement non finalisé : <span>{{number_format(floatval($mAbort->sum('order_total')),2)}} €</span></li>
@@ -100,6 +97,7 @@
                     </ul>
             </article>
         </section>
+        <!-- stat année -->
         <section>
             <h2>Année :
                 {!! Form::open(array('post' => 'StatistiquesController@datePicker')) !!}
@@ -127,7 +125,6 @@
                 @endif
                     <ul>
                         <li>Espèces : <span>{{number_format($yCash,2)}} €</span></li>
-                        <li>Chèques : <span>{{number_format($yMoneyorder,2)}} €</span></li>
                         <li>Paypal : <span>{{number_format($yPaypal,2)}} €</span></li>
                         <li class="total alert-success">Total : <span>{{number_format(floatval($yTotal->sum('order_total')),2)}} €</span></li>
                         <li class="alert-danger">Paiement non finalisé : <span>{{number_format(floatval($yAbort->sum('order_total')),2)}} €</span></li>
