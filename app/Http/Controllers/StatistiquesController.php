@@ -25,6 +25,7 @@ class StatistiquesController extends Controller{
         } else {
             $day = $request->day;
             $dDay = (new \DateTime($request->day))->format('d/m/Y') ;
+            dd($day);
         }
         $dSrc = 'created_date';
         $dSearch = [$day.' 00:00:01', $day.' 23:59:59' ];
@@ -145,7 +146,7 @@ class StatistiquesController extends Controller{
             $dataDate = new \DateTime(date('Y-m-d'));
             $req = new \DateTime($request->day);
             if ($dataDate->format('Ymd') < $req->format('Ymd')) {
-                return Redirect::to('/statistiques')->with('messageDay', 'La date choisit n\'a pas encore donnée!');
+                return Redirect::to('/statistiques')->with('messageDay', 'La date choisit n\'a pas encore de données');
             }
             else {
                 $data = explode('/', $request->day);

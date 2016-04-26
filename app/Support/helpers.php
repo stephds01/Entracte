@@ -76,6 +76,37 @@ function dateConvert($month) {
 }
 
 /**
+ * Convert date day in french
+ * @param $day
+ * @return string
+ */
+function dayConvert($day) {
+    switch ($day) {
+        case 'Monday':
+            return 'lundi';
+            break;
+        case 'Tuesday':
+            return 'mardi';
+            break;
+        case 'Wednesday':
+            return 'mercredi';
+            break;
+        case 'Thursday':
+            return 'jeudi';
+            break;
+        case 'Friday':
+            return 'vendredi';
+            break;
+        case 'Saturday':
+            return 'samedi';
+            break;
+        case 'Sunday':
+            return 'dimanche';
+            break;
+    }
+}
+
+/**
  * @param $date
  * @internal param $day
  * @return int

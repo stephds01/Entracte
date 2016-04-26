@@ -16,8 +16,7 @@ body {
 #container {
   /* width: 1200px;*/
   margin: 0 auto;
-  background-color: #069AC8;
-  min-height: 1000px;
+  min-height: 100vh;
 }
 
 a {
@@ -7355,7 +7354,6 @@ body,
 label,
 .checkbox label {
   font-weight: 300;
-  background-color: #069AC8;
 }
 
 /*! jQuery UI - v1.11.4 - 2016-02-08
@@ -12268,7 +12266,13 @@ label,
   width: 100%;
   background-color: #069AC8;
   background-size: cover;
-  margin: 0 auto 80px;
+  margin: -20px auto 0;
+  padding: 20px 0 80px;
+  min-height: 100vh;
+}
+
+.ent-home-container-global #refresh_page {
+  margin-top: -8px;
 }
 
 .ent-home-container-global .home-stats {
@@ -12316,6 +12320,19 @@ label,
   height: 50px;
 }
 
+.ent-home-tab tr.status {
+  background-color: #f9690e;
+  cursor: pointer;
+}
+
+.ent-home-tab tr.status:hover {
+  color: #ffffff;
+}
+
+.ent-home-tab tr.validate {
+  background-color: #ffffff;
+}
+
 .ent-home-tab th {
   color: white;
   font-size: 14px;
@@ -12327,8 +12344,7 @@ label,
 }
 
 .ent-home-tab td {
-  font-size: 12px;
-  background-color: white;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -12359,29 +12375,23 @@ label,
 .ent-home-footer {
   background-color: #f4f4f4;
   width: 90%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   margin-left: 5%;
-  padding: 10px;
 }
 
-.ent-home-footer div {
-  padding-left: 20px;
-  font-size: 11px;
+.ent-home-footer .session, .ent-home-footer form {
+  width: 49%;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  text-align: right;
 }
 
 .ent-detail-container-global {
   width: 100%;
   background-color: #069AC8;
   background-size: cover;
-  margin: 0 auto 80px;
+  margin: -20px auto 0;
+  padding: 20px 0 80px;
 }
 
 .ent-detail-container-global h2 {
@@ -12598,7 +12608,9 @@ label,
   width: 100%;
   background-color: #069AC8;
   background-size: cover;
-  margin: 0 auto 80px;
+  margin: -20px auto 0;
+  padding: 20px 0;
+  min-height: 100vh;
 }
 
 .ent-statistique-container-global section {
@@ -12672,4 +12684,60 @@ label,
 **************************************/
 .form-group label {
   background-color: #fff;
+}
+
+@media print {
+  #print {
+    display: none;
+  }
+  .ent-print-container-global {
+    width: 600px;
+    height: 900px;
+    margin: 0 auto;
+    font-size: 10pt;
+  }
+  .ent-print-container-global h1 {
+    font-size: 18pt;
+  }
+  .ent-print-container-global h1 img {
+    width: 40px;
+  }
+  .ent-print-container-global h2 {
+    font-size: 14pt;
+  }
+  .ent-print-container-global ul li {
+    list-style: none;
+  }
+  .ent-print-container-global table {
+    width: 500px;
+  }
+  .ent-print-container-global table tr td, .ent-print-container-global table tr th {
+    padding: 10px;
+  }
+}
+
+.ent-print-container-global {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 12px;
+}
+
+.ent-print-container-global ul li {
+  list-style: none;
+}
+
+.ent-print-container-global ul li.custom_note {
+  font-size: 14px;
+  color: #069AC8;
+  border: 1px dashed #069AC8;
+  padding: 10px;
+  margin: 10px;
+}
+
+.ent-print-container-global table {
+  width: 100%;
+}
+
+.ent-print-container-global table tr td, .ent-print-container-global table tr th {
+  padding: 10px;
 }

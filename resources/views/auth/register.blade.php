@@ -1,6 +1,6 @@
 @extends('app')
-@include('pages.components.header')
 @section('content')
+	@include('pages.components.header')
 
 <div class="container-fluid">
 	<div class="row">
