@@ -50,7 +50,7 @@
                         </td>
                         <td class="text-danger">{{$item->order->customer_note}}</td>
                         <td>{{ str_replace('.', ',',number_format(floatval($item->order_total), 2))}} €</td>
-                        <td><a href="{{URL::to('/facture')}}/{{$item->order_id}}" target="_blank"><i class="fa fa-print fa-2x"></i></a></td>
+                        <td><a href="{{URL::to('/facture')}}/{{$item->order_id}}"><i class="fa fa-print fa-2x"></i></a></td>
                         <td><a href="{{ URL::to( '/commande') }}/{{ $item->order_id }}">
                                 <i class="fa fa-plus fa-2x"></i></a>
                         </td>
