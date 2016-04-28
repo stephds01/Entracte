@@ -21,7 +21,7 @@
                         <li class="list-group-item">ID commande : <strong>{{ $order->order_id }}</strong></li>
                         <li class="list-group-item">Facture N° : <strong>{{ $order->order_id }}</strong></li>
                         <li class="list-group-item">Montant : <strong>{{ number_format(floatval($order->order_total),2)}} €</strong></li>
-                        <li class="list-group-item">Date : <strong>{{ date('d/m/Y H:i:s',strtotime($order->created_date)+3600*($timezone+date("I")))}}</strong></li>
+                        <li class="list-group-item">Date : <strong>{{ date('d/m/Y H:i',strtotime($order->created_date))}}</strong></li>
                     </ul>
                 </div>
                 <div class="ent-detail-informationClient">

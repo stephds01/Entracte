@@ -6,7 +6,7 @@ Bonjour {{$orderInfo->billing_first_name}} {{$orderInfo->billing_last_name}}
 
 Nous avons bien enregistré votre commande et nous vous remercions.
 
-Le restaurant à prévu de vous livrer le {{dayConvert(date('l',strtotime($order->created_date )+6000*($timezone+date("I"))))}} {{date('d',strtotime($order->created_date )+6000*($timezone+date("I")))}} {{dateConvert(date('F',strtotime($order->created_date )+6000*($timezone+date("I"))))}} {{date('Y',strtotime($order->created_date )+6000*($timezone+date("I")))}} à {{date('H:i',strtotime($order->created_date )+6000*($timezone+date("I")))}} à cette adresse :
+Le restaurant à prévu de vous livrer le {{dayConvert(date('l',strtotime($order->created_date )+2400))}} {{date('d',strtotime($order->created_date )+2400)}} {{dateConvert(date('F',strtotime($order->created_date )+2400))}} {{date('Y',strtotime($order->created_date )+2400)}} à {{date('H:i',strtotime($order->created_date )+2400)}} à cette adresse :
 {{ $orderInfo->billing_address_1 }} {{ $orderInfo->billing_address_2 }}
 {{ $orderInfo->billing_zip }} {{ $orderInfo->billing_city }}
 

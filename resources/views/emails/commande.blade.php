@@ -6,12 +6,12 @@
 <p>Bonjour {{$orderInfo->billing_first_name}} {{$orderInfo->billing_last_name}}</p>
 <p>Nous avons bien enregistré votre commande et nous vous remercions. <br>
     Le restaurant à prévu de vous livrer le
-    {{dayConvert(date('l',strtotime($order->created_date )+6000*($timezone+date("I"))))}}
-    {{date('d',strtotime($order->created_date )+6000*($timezone+date("I")))}}
-    {{dateConvert(date('F',strtotime($order->created_date )+6000*($timezone+date("I"))))}}
-    {{date('Y',strtotime($order->created_date )+6000*($timezone+date("I")))}}
+    {{dayConvert(date('l',strtotime($order->created_date )+2400))}}
+    {{date('d',strtotime($order->created_date )+2400)}}
+    {{dateConvert(date('F',strtotime($order->created_date )+2400))}}
+    {{date('Y',strtotime($order->created_date )+2400)}}
     à
-    {{date('H:i',strtotime($order->created_date )+6000*($timezone+date("I")))}} à cette adresse :
+    {{date('H:i',strtotime($order->created_date )+2400)}} à cette adresse :
     <span style="display: block; width: 100%; padding-left: 20px; margin: 10px auto;">
         <strong>
             {{ $orderInfo->billing_address_1 }} {{ $orderInfo->billing_address_2 }}

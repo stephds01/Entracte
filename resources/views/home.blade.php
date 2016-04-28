@@ -41,9 +41,9 @@
                             @endif
                             data-state="{{$item->order_state_id}}">
                         <td>{{ $item->order_id }}</td>
-                        <td>{{ date('H:i',strtotime($item->created_date )+3600*($timezone+date("I")))}}</td>
+                        <td>{{ date('H:i',strtotime($item->created_date ))}}</td>
                         <td>
-                            {{ date('H:i',strtotime($item->created_date )+6000*($timezone+date("I")))}}
+                            {{ date('H:i',strtotime($item->created_date )+2400)}}
 
                         </td>
                         <td class="text-capitalize">{{ $item->billing_last_name }} {{ $item->billing_first_name }} <br>
