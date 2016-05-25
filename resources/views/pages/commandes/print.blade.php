@@ -19,21 +19,21 @@
 
                 <ul>
                     <li>Commandé :
-                        le <strong>    {{dayConvert(date('l',strtotime($order->created_date )+3600*($timezone+date("I"))))}}
-                            {{date('d',strtotime($order->created_date )+3600*($timezone+date("I")))}}
-                            {{dateConvert(date('F',strtotime($order->created_date )+3600*($timezone+date("I"))))}}
-                            {{date('Y',strtotime($order->created_date )+3600*($timezone+date("I")))}}
+                        le <strong>    {{dayConvert(date('l',strtotime($order->created_date )))}}
+                            {{date('d',strtotime($order->created_date ))}}
+                            {{dateConvert(date('F',strtotime($order->created_date )))}}
+                            {{date('Y',strtotime($order->created_date ))}}
                             à
-                            {{date('H:i',strtotime($order->created_date )+3600*($timezone+date("I")))}}
+                            {{date('H:i',strtotime($order->created_date ))}}
                         </strong>
                     </li>
                     <li>Livraison prévue :
-                        le <strong>    {{dayConvert(date('l',strtotime($order->created_date )+6000*($timezone+date("I"))))}}
-                            {{date('d',strtotime($order->created_date )+6000*($timezone+date("I")))}}
-                            {{dateConvert(date('F',strtotime($order->created_date )+6000*($timezone+date("I"))))}}
-                            {{date('Y',strtotime($order->created_date )+6000*($timezone+date("I")))}}
+                        le <strong>    {{dayConvert(date('l',strtotime($order->created_date )+2400))}}
+                            {{date('d',strtotime($order->created_date )+2400)}}
+                            {{dateConvert(date('F',strtotime($order->created_date )+2400))}}
+                            {{date('Y',strtotime($order->created_date )+2400)}}
                             à
-                            {{date('H:i',strtotime($order->created_date )+6000*($timezone+date("I")))}}
+                            {{date('H:i',strtotime($order->created_date )+2400)}}
                         </strong>
                     </li>
                     <li>Paiement :
@@ -74,7 +74,6 @@
                         @endif
                     </li>
                 </ul>
-
             </div>
         </section>
 
