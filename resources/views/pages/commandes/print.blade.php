@@ -13,11 +13,34 @@
             <h1 class="text-center"><img src="{{asset('img/logo.png')}}" alt="l'entracte restaurant"> Restaurant - Pizzeria L'Entracte</h1>
             <h2 class="text-center">Commande N° {{$order->order_id}}</h2>
         </header>
-        <section>
-            <div>
-                <h3>Livraison</h3>
+        <section class="ent-print-box">
 
-                <ul>
+            <div class="box">
+                {{--<h3 class="">livraison :</h3>--}}
+                    <div class="ent-print-livraison">
+                        <span class="text-capitalize">
+                            {{ $orderInfo->billing_last_name }}
+                            {{ $orderInfo->billing_first_name }}<br>
+                        </span>
+
+                        <ul>
+                            <li class="">
+                                <strong>
+                                    {{ $orderInfo->billing_address_1 }}
+                                    {{ $orderInfo->billing_address_2 }}<br>
+                                    {{ $orderInfo->billing_zip }}
+                                    {{ $orderInfo->billing_city }}<br>
+                                </strong>
+                            </li>
+                            <li class=""><strong>{{ $orderInfo->billing_phone_1 }}</strong></li>
+                        </ul>
+                    </div>
+            </div>
+
+            <div>
+                <h3>Information commande</h3>
+
+                <ul class="ent-print-info">
                     <li>Commandé :
                         le <strong>    {{dayConvert(date('l',strtotime($order->created_date )))}}
                             {{date('d',strtotime($order->created_date ))}}
@@ -46,25 +69,8 @@
                         @endif
                     </li>
                 </ul>
-            </div>
-            <div>
-                <h3>Client :
-                    <span class="text-capitalize">
-                        {{ $orderInfo->billing_last_name }}
-                        {{ $orderInfo->billing_first_name }}
-                    </span>
-                </h3>
 
                 <ul>
-                    <li>livraison :
-                        <strong>
-                            {{ $orderInfo->billing_address_1 }}
-                            {{ $orderInfo->billing_address_2 }}
-                            {{ $orderInfo->billing_zip }}
-                            {{ $orderInfo->billing_city }}
-                        </strong>
-                    </li>
-                    <li>Téléphone : <strong>{{ $orderInfo->billing_phone_1 }}</strong></li>
                     <li class="custom_note">
                         <i class="fa fa-pencil-square-o"></i>
                         @if(empty($order->customer_note))
@@ -74,6 +80,7 @@
                         @endif
                     </li>
                 </ul>
+
             </div>
         </section>
 

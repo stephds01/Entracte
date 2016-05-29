@@ -12741,3 +12741,22 @@ label,
 .ent-print-container-global table tr td, .ent-print-container-global table tr th {
   padding: 10px;
 }
+
+/* a copier */
+.ent-print-livraison {
+  /*color: blue;*/
+  font-size: 1.6em;
+  font-weight: bold;
+  border: 2px black solid;
+  width: 33%;
+  /* text-align: center; */
+  padding-left: 20px;
+}
+
+.ent-print-box {
+  padding: 15px;
+}
+
+.ent-print-info {
+  font-size: 1.3em;
+}
