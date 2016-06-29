@@ -81,7 +81,7 @@ class DetailsController extends Controller {
         ], function($message) use ($usermail){
             $message
                 ->to($usermail)
-                ->from('local_test@g.com')
+                ->from('lentracte-pizzeria@hotmail.fr')
                 ->subject('Restaurant l\'entracte : votre commande est prise en compte');
         });
 

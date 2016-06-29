@@ -36,6 +36,8 @@
                     <tr
                             @if($item->order_state_id == 1 || $item->order_state_id == 4)
                             class="status"
+                            @elseif($item->order_state_id == 3 || $item->order_state_id == 5 )
+                            class="stop"
                             @else
                             class="validate"
                             @endif

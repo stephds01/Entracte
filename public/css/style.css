@@ -12330,7 +12330,17 @@ label,
 }
 
 .ent-home-tab tr.validate {
-  background-color: #ffffff;
+  background-color: #5cb75c;
+}
+
+/*@todo-steph Ajout du font rouge pour status annulé*/
+.ent-home-tab tr.stop {
+  background-color: #fdfdfe;
+  font-size:11px;
+}
+
+.ent-home-tab tr.stop td.text-danger {
+  color: #333;
 }
 
 .ent-home-tab th {

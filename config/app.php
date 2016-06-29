@@ -144,7 +144,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
-		Barryvdh\Debugbar\ServiceProvider::class,
+		//Barryvdh\Debugbar\ServiceProvider::Class,
 
 	],
 
