@@ -25,7 +25,6 @@ class StatistiquesController extends Controller{
         } else {
             $day = $request->day;
             $dDay = (new \DateTime($request->day))->format('d/m/Y') ;
-            dd($day);
         }
         $dSrc = 'created_date';
         $dSearch = [$day.' 00:00:01', $day.' 23:59:59' ];
